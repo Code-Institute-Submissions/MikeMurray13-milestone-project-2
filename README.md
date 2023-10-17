@@ -1,39 +1,40 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+PROJECT IDEA
 
-Welcome,
+Create a short choose-your-own-adventure as a proof of concept for a larger project.
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+The design and story will be heavily themed around the material and world created for the tabletop roleplaying game, Mork Borg*. Mork Borg has a bold visual style that I love and would like to emulate. 
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+I have already created a pamphlet adventure for Mork Borg and relaased it via Kickstarter. I considered translating that adventure for this project but the content might be a little graphic. More information on it can be found here (only suitable for 18+) - ***Link to Oyster Ditch
 
-## Codeanywhere Reminders
+***include links to Johan Nohr's design manifesto.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+THIRD PARTY LICENCE
+Mork Borg has a third-party licence. It allows creators to make money from any products they create from it. Creators have to include specific information somewhere on their project. The licence allows creators to use aspects of the Mork Borg rulebook such as mechanics, place names, and some creatures.
 
-`python3 -m http.server`
+For more information on the Mork Borg third-party licence, see here - <https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjerNqr7PyBAxVaW0EAHerpBUIQFnoECA4QAQ&url=https%3A%2F%2Fliberludorum.com%2F2021%2F07%2F05%2Fthe-mork-borg-third-party-license-you%2F&usg=AOvVaw3YTWA8FG2jswu0qQE8RIYG&opi=89978449>
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+You can read about the choose-your-own-adventure format here - <https://en.wikipedia.org/wiki/Choose_Your_Own_Adventure> and here - <https://en.wikipedia.org/wiki/Fighting_Fantasy>
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+Scope
 
-`http_server`
+As I'm not being judged on my creative writing, the goal of the project will be to construct just enough narrative to tie together scenes that demonstrate the core mechanics. These are listed in order of importance. I aim to include as many of these as I can.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+Core Mechanics
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+- [ ] Splash screen
+- [ ] Moving from room to room.
+- [ ] Create alert when user attempts to leave page.
+- [ ] Using a 'static' object.
+- [ ] Pick up an object and add it to your inventory.
+- [ ] Use an object in your inverntory on another object.
+- [ ] Time-sensitive encounters.
+- [ ] Combat - See COMBAT.
+- [ ] Conversation with non-player character.
+- [ ] Congratulations message on completing the adventure.
+- [ ] Player stats.
+- [ ] Incorporate stats into encounters.
+- [ ] Login.
+- [ ] Option to save game.
+- [ ] Scoreboard.
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
+***Umlaut information
