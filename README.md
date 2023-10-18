@@ -2,11 +2,15 @@ PROJECT IDEA
 
 Create a short choose-your-own-adventure as a proof of concept for a larger project.
 
-The design and story will be heavily themed around the material and world created for the tabletop roleplaying game, Mork Borg*. Mork Borg has a bold visual style that I love and would like to emulate. 
+The design and story will be heavily themed around the material and world created for the tabletop roleplaying game, Mork Borg*. Mork Borg has a bold visual style that I love and would like to emulate.
 
-I have already created a pamphlet adventure for Mork Borg and relaased it via Kickstarter. I considered translating that adventure for this project but the content might be a little graphic. More information on it can be found here (only suitable for 18+) - ***Link to Oyster Ditch
+I have already created a pamphlet adventure for Mork Borg and relaased it via Kickstarter. I considered translating that adventure for this project but the content might be a little too graphic. You can download the free pdf here (only suitable for 18+) - ***Link to Oyster Ditch
 
-***include links to Johan Nohr's design manifesto.
+DESIGN
+
+Colour choice as players decision as opposed to changed automatically in case players dislike the lurid greens/yellows, etc. Not just for fans of the game.
+
+***include links to Johan Nohr's design manifesto. 
 
 THIRD PARTY LICENCE
 Mork Borg has a third-party licence. It allows creators to make money from any products they create from it. Creators have to include specific information somewhere on their project. The licence allows creators to use aspects of the Mork Borg rulebook such as mechanics, place names, and some creatures.
@@ -17,24 +21,31 @@ You can read about the choose-your-own-adventure format here - <https://en.wikip
 
 Scope
 
-As I'm not being judged on my creative writing, the goal of the project will be to construct just enough narrative to tie together scenes that demonstrate the core mechanics. These are listed in order of importance. I aim to include as many of these as I can.
+The goal of the project will be to construct just enough narrative to tie together scenes together to demonstrate both the core mechanics and my ability to use Javascript. These are listed in order of importance. I aim to include as many of these as I can. I would like to continue to grow the project in o a full story. 
 
 Core Mechanics
 
-- [ ] Splash screen
+- [ ] Splash screen, licence information.
 - [ ] Moving from room to room.
 - [ ] Create alert when user attempts to leave page.
 - [ ] Using a 'static' object.
 - [ ] Pick up an object and add it to your inventory.
-- [ ] Use an object in your inverntory on another object.
+- [ ] Use an object in your inventory on another object.
 - [ ] Time-sensitive encounters.
 - [ ] Combat - See COMBAT.
 - [ ] Conversation with non-player character.
 - [ ] Congratulations message on completing the adventure.
-- [ ] Player stats.
+- [ ] Player stats, between splash screen and intro statement.
 - [ ] Incorporate stats into encounters.
 - [ ] Login.
 - [ ] Option to save game.
 - [ ] Scoreboard.
 
 ***Umlaut information
+
+SPLASH SCREEN
+
+Large hero image with a start button.
+
+The third-party licence information will either be on the splash screen itself or use a modal to display the information. This will need to be trial and error as I'm not experienced enough wth layout to make that decision beforehand.
+
