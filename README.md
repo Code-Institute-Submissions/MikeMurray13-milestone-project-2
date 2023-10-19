@@ -25,8 +25,8 @@ The goal of the project will be to construct just enough narrative to tie togeth
 
 Core Mechanics
 
-- [ ] Splash screen, licence information.
-- [ ] Moving from room to room.
+- [x] Splash screen, licence information.
+- [x] Moving from room to room.
 - [ ] Create alert when user attempts to leave page.
 - [ ] Using a 'static' object.
 - [ ] Pick up an object and add it to your inventory.
@@ -49,3 +49,19 @@ Large hero image with a start button.
 
 The third-party licence information will either be on the splash screen itself or use a modal to display the information. This will need to be trial and error as I'm not experienced enough wth layout to make that decision beforehand.
 
+Start Game
+Initial Idea 
+Change HTML of the "content" box to the standard HTML of the main game mode. On trying this I found that I was unabl
+
+The start page needed a 
+
+
+Alert When Leaving Page
+
+I followed the information here - <https://www.w3schools.com/tags/ev_onbeforeunload.asp#:~:text=The%20onbeforeunload%20event%20fires%20when>,is%20different%20in%20different%20browsers.>
+
+
+Error
+Once I implemented the Alert I came up against the following error in my last milestone project. I remembered that after hours of trying to find the answer and trawling through YouTube videos and forum posts that were vastly outside my skill level, I came across the following line of code that just fixed the issue in one step. 
+Python Socket.Error: [Errno 98] Address Already In Use
+kill -9 $(ps -A | grep python | awk '{print $1}')

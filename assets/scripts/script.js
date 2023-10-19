@@ -48,3 +48,9 @@ document.getElementById("headingBox").innerHTML = roomMatrix[gameState.currX][ga
 document.getElementById("textBox").innerHTML = roomMatrix[gameState.currX][gameState.currY].description;
 document.getElementById("choiceBox").innerHTML = roomMatrix[gameState.currX][gameState.currY].choices;
 }
+
+
+
+function leavePageAlert() {
+    return "Write something clever here...";
+}
