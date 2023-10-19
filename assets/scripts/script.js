@@ -6,12 +6,12 @@ const roomMatrix = [
     ],
     [
         /*1.0*/ { heading: "Room 4", description: "Room 4", choices: "<button onclick =\"move('east')\">EAST</button>" },
-        /*1.1*/ { heading: "Room 5", description: "Room 5", choices: "<button onclick =\"move('north')\">NORTH</button><button onclick =\"move('south')\">SOUTH</button><button onclick =\"move('west')\">WEST</button><button onclick =\"move('east')\">EAST</button>"},
+        /*1.1*/ { heading: "Room 5", description: "The room is dark.", choices: "<button onclick =\"move('north')\">NORTH</button><button onclick =\"move('south')\">SOUTH</button><button onclick =\"move('west')\">WEST</button><button onclick =\"move('east')\">EAST</button>"},
         /*1.2*/ { heading: "Room 6", description: "Room 6", choices: "<button onclick =\"move('west')\">WEST</button>" }
     ],
     [
         /*2.0*/ { heading: "Room 7", description: "Room 7" },
-        /*2.1*/ { heading: "Room 8", description: "Room 8", choices: "<button onclick =\"move('north')\">NORTH</button>" },
+        /*2.1*/ { heading: "Room 8", description: "Room 8", choices: "<button onclick =\"move('north')\">NORTH</button><button onclick='lightSwitch()'>LIGHT SWITCH</button>" },
         /*2.2*/ { heading: "Room 9", description: "Room 9" }
     ]
 ];
@@ -53,4 +53,9 @@ document.getElementById("choiceBox").innerHTML = roomMatrix[gameState.currX][gam
 
 function leavePageAlert() {
     return "Write something clever here...";
+}
+
+function lightSwitch() {
+    roomMatrix[1][1].description = 'The room is well lit.'; 
+    console.log(roomMatrix[1][1].description);
 }
