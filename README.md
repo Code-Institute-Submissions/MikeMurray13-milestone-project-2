@@ -27,8 +27,8 @@ Core Mechanics
 
 - [x] Splash screen, licence information.
 - [x] Moving from room to room.
-- [ ] Create alert when user attempts to leave page.
-- [ ] Using a 'static' object.
+- [x] Create alert when user attempts to leave page.
+- [x] Using a 'static' object.
 - [ ] Pick up an object and add it to your inventory.
 - [ ] Use an object in your inventory on another object.
 - [ ] Time-sensitive encounters.
@@ -65,3 +65,7 @@ Error
 Once I implemented the Alert I came up against the following error in my last milestone project. I remembered that after hours of trying to find the answer and trawling through YouTube videos and forum posts that were vastly outside my skill level, I came across the following line of code that just fixed the issue in one step. 
 Python Socket.Error: [Errno 98] Address Already In Use
 kill -9 $(ps -A | grep python | awk '{print $1}')
+
+Using Static Objects
+The main benefit of using the 2D array matrix instead of each button having its own code to change the HTML of the content box is that it allows rooms to be edited far easier. 
+In my basic example, clicking the button for the light switch in room 8, changed the description of room 5 when you return.

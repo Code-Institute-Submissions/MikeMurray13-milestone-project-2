@@ -1,7 +1,7 @@
 const roomMatrix = [
     [
         /*0.0*/ { heading: "Room 1", description: "Room 1" },
-        /*0.1*/ { heading: "Room 2", description: "Room 2", choices: "<button onclick =\"move('south')\">SOUTH</button>" },
+        /*0.1*/ { heading: "Room 2", description: "Room 2", choices: "<button onclick =\"move('south')\">SOUTH</button><button onclick='addInventory(\"sword\")'>SWORD</button>" },
         /*0.2*/ { heading: "Room 3", description: "Room 3" }
     ],
     [
@@ -21,6 +21,8 @@ let gameState = {
     currX: 1,
     currY: 1
 }
+
+let inventory = [];
 
 function startGame() {
     //Hide startScreen and displays the main game content box   
@@ -50,12 +52,19 @@ document.getElementById("choiceBox").innerHTML = roomMatrix[gameState.currX][gam
 }
 
 
-
+//Creates an alert when the player tries to leave the page
 function leavePageAlert() {
     return "Write something clever here...";
 }
 
+//Turns the light on in Room 5
 function lightSwitch() {
     roomMatrix[1][1].description = 'The room is well lit.'; 
     console.log(roomMatrix[1][1].description);
+}
+
+
+function addInventory(item) {
+    inventory.push({item});
+    console.log(inventory);
 }
