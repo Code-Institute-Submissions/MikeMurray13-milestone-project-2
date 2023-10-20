@@ -22,15 +22,16 @@ let gameState = {
     currY: 1
 };
 
-let inventory = [];
+let player = {
+    name: 'Mr Choppy',
+    gold: 0,
+    handL: 'fist',
+    handR: 'fist',
+    armor: 'rags',
+    inventory: []
+};
 
-function startGame() {
-    //Hide startScreen and displays the main game content box   
-    document.getElementById("start-screen").style = "display: none";
-    document.getElementById("content").style = "display: block";
 
-    updateContent();
-}
 
 //Basic move function
 function move(dir) {
@@ -63,7 +64,7 @@ function updateContent() {
 
 
 
-//Creates an alert when the player tries to leave the page
+//Creates an alert when the player tries to leave the page - ,\"This is just a sword\",6,1,1
 /*
 function leavePageAlert() {
     return "Leaving will cause you to lose any unsaved progress...";
@@ -77,7 +78,7 @@ function lightSwitch() {
 
 //Adds 'item' to inventory
 function addInventory(item) {
-    inventory.push({ item });
-    console.log(inventory);
+    player.inventory.push({ item });
+    console.log(player);
 }
 
