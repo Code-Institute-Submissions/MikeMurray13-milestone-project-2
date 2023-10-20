@@ -11,27 +11,26 @@
 <title>LONG AND HARD IS THE ROAD</title>
 </head>
 <body onbeforeunload = "return leavePageAlert()">
-<div class="main">
+<div class="main container">
     <!--Start screen-->
         <div id="start-screen">
             <div class="text-center"><h3>long and hard is the way</h3></div>
             <div class="text-center"><button onclick="startGame()">begin</button></div>
             <div class="container">
-                <div class="row">
-                    <div class="col license"><i class="fa-solid fa-quote-left"></i><p>[Product name] is an independent production by [Author or Publisher] and is not affiliated with Ockult Örtmästare Games or Stockholm Kartell. It is published under the MÖRK BORG Third Party License.</p></div>
+                <div id="license-box" class="row align-items-end  align-items-stretch">
+                    <div class="col license"><i class="fa-solid fa-quote-left"></i><p>[Product name] is an independent production by Mike Murray and is not affiliated with Ockult Örtmästare Games or Stockholm Kartell. It is published under the MÖRK BORG Third Party License.</p></div>
                     <div class="col license"><i class="fa-solid fa-quote-left"></i><p>MÖRK BORG is copyright Ockult Örtmästare Games and Stockholm Kartell.</p></div>
                 </div>
             </div>
         </div>
     <!--Main content-->
     <div id="content">
-            <!--Navigation bar-->
-            <div class="clearfix">
-        <button class="menu-button float-start"><i class="fa-solid fa-bars"></i></button>
-        <button class="menu-button float-end"><i class="fa-regular fa-user"></i></button>
+        <!--Navigation bar-->
+        <div id="menu-bar" class="clearfix">
+            <button class="menu-button float-start"><i class="fa-solid fa-bars"></i></button>
+            <button class="menu-button float-end"><i class="fa-regular fa-user"></i></button>
         </div>
             <!--Heading-->
-            
         <h3 id="heading-box"></h3>
         <!--Description-->
         <p id="text-box"></p>

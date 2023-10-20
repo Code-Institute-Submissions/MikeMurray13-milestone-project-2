@@ -2,26 +2,58 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&family=REM&family=Righteous&display=swap');
 
 body {
-    margin: 0;
-    padding: 0;
+    width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
     background-color: black;
 }
 
 .main {
-    align: center;
-    margin: 0;
+    margin: 0px;
+        padding: 0px;
     width: 500px;
     height: 100vh;
     background-color: orange;
 }
 
+.container {
+    margin: 0px;
+        padding: 0px;
+}
+
+.row {
+    --bs-gutter-x: 0;
+}
+
+#license-box {
+    padding: 0 5 0 5;
+
+}
+
+.license {
+    font-family: 'IM Fell English', serif;
+    color: black;
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    font-size: 13px;
+}
+
+.license i {
+    font-size: 30px;
+}
+
+
+
 .menu-button {
     background: none;
-        border: none;
-            padding: 0;
-            cursor: pointer;
-    margin: 10px;
-font-size: x-large;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    margin: 15px;
+    font-size: 30px;
+    line-height: 30px;
 }
 
 #directions-box {
@@ -37,34 +69,43 @@ font-size: x-large;
 	cursor: pointer;
     height:50px;
     width:50px;
+      line-height: 50px;
+
 font-size: 50px;
 }
 
-.license {
-    font-family: 'IM Fell English', serif;
-    color: black;
-    background-color: white;
-    margin:10px;
-    padding: 10px;
-    font-size: 13px;
-}
 
-.license i {
-    font-size: 30px;
-}
 
 .choice-button:disabled {
     color: red;
 }
 
 #start-screen {
+    height: 100%;
+        padding: 0;
+            margin: 0;
     display: block;
 }
 
 #content {
-    background-color: yellow; 
+    width: 100%;
+    height: 100%;
     display: none;
 }
 
+#heading-box {
+    font-size: xx-large;
+    text-align: center;
+    padding: 5 10 10 10;
+    color: white;
+}
+
+#text-box {
+    font-size: large;
+    margin: 10px;
+    padding: 0 15 20 15;
+    text-align: justify;
+    color: grey;
+}
 
 
