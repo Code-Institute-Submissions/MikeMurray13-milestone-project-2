@@ -1,6 +1,6 @@
 const roomMatrix = [
     [
-        /*0.0*/ { heading: "Room 1", description: "Room 1", choices: ["<button onclick='addInventory(\"sword\")'>SWORD</button>"] },
+        /*0.0*/ { heading: "Room 1", description: "Room 1", choices: ["<button onclick='addInventory(\"sword\",\"This is just a sword\",\"onehand\",6,\"yes\",\"no\"); this.remove()'>SWORD</button>"] },
         /*0.1*/ {},
         /*0.2*/ { heading: "Room 3", description: "Room 3", choices: [] }
     ],
@@ -64,7 +64,7 @@ function updateContent() {
 
 
 
-//Creates an alert when the player tries to leave the page - ,\"This is just a sword\",6,1,1
+//Creates an alert when the player tries to leave the page
 /*
 function leavePageAlert() {
     return "Leaving will cause you to lose any unsaved progress...";
@@ -77,8 +77,8 @@ function lightSwitch() {
 }
 
 //Adds 'item' to inventory
-function addInventory(item) {
-    player.inventory.push({ item });
+function addInventory(item,description,type,value,combat,equipped) {
+    player.inventory.push({ item, description, type, value, combat, equipped });
     console.log(player);
 }
 
