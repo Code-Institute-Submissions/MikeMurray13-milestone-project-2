@@ -19,7 +19,16 @@
     <div id="content">
         <h3 id="headingBox"></h3>
         <p id="textBox"></p>
-        <div id="choiceBox"></div>    
+        <div>
+            <button id="northButton" onclick="move('north')">NORTH</button>
+            <button id="southButton" onclick="move('south')">SOUTH</button>
+            <button id="westButton" onclick="move('west')">WEST</button>
+            <button id="eastButton" onclick="move('east')">EAST</button>
+        </div>
+        <div id="choiceBox">
+            
+        </div> 
+        <p id="debug"></p>   
     </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
