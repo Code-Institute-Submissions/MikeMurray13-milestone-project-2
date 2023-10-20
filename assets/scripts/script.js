@@ -26,7 +26,7 @@ let inventory = [];
 
 function startGame() {
     //Hide startScreen and displays the main game content box   
-    document.getElementById("startScreen").style = "display: none";
+    document.getElementById("start-screen").style = "display: none";
     document.getElementById("content").style = "display: block";
 
     updateContent();
@@ -50,15 +50,15 @@ function updateContent() {
     let Y = gameState.currY;
 
     //updates values of each room
-    document.getElementById('headingBox').innerHTML = roomMatrix[X][Y].heading;
-    document.getElementById('textBox').innerHTML = roomMatrix[X][Y].description;
-    document.getElementById('choiceBox').innerHTML = roomMatrix[X][Y].choices;
+    document.getElementById('heading-box').innerHTML = roomMatrix[X][Y].heading;
+    document.getElementById('text-box').innerHTML = roomMatrix[X][Y].description;
+    document.getElementById('choice-box').innerHTML = roomMatrix[X][Y].choices;
 
     //Disables buttons that lead to empty rooms or indices outside of roomMatrix
-    if (X == (roomMatrix.length - 1) || roomMatrix[X + 1][Y].hasOwnProperty('description') == false) { document.getElementById("southButton").disabled = true; } else { document.getElementById("southButton").disabled = false; };
-    if (X == 0 || roomMatrix[X - 1][Y].hasOwnProperty('description') == false) { document.getElementById("northButton").disabled = true; } else { document.getElementById("northButton").disabled = false; };
-    if (Y == (roomMatrix[X].length - 1) || Object.keys(roomMatrix[X][Y + 1]).length === 0) { document.getElementById("eastButton").disabled = true; } else { document.getElementById("eastButton").disabled = false; };
-    if (Y == 0 || Object.keys(roomMatrix[X][Y - 1]).length === 0) { document.getElementById("westButton").disabled = true; } else { document.getElementById("westButton").disabled = false; };
+    if (X == (roomMatrix.length - 1) || roomMatrix[X + 1][Y].hasOwnProperty('description') == false) { document.getElementById("south-button").disabled = true; } else { document.getElementById("south-button").disabled = false; };
+    if (X == 0 || roomMatrix[X - 1][Y].hasOwnProperty('description') == false) { document.getElementById("north-button").disabled = true; } else { document.getElementById("north-button").disabled = false; };
+    if (Y == (roomMatrix[X].length - 1) || Object.keys(roomMatrix[X][Y + 1]).length === 0) { document.getElementById("east-button").disabled = true; } else { document.getElementById("east-button").disabled = false; };
+    if (Y == 0 || Object.keys(roomMatrix[X][Y - 1]).length === 0) { document.getElementById("west-button").disabled = true; } else { document.getElementById("west-button").disabled = false; };
 }
 
 
@@ -75,7 +75,7 @@ function lightSwitch() {
     roomMatrix[1][1].description = 'The room is well lit.';
 }
 
-
+//Adds 'item' to inventory
 function addInventory(item) {
     inventory.push({ item });
     console.log(inventory);

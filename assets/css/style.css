@@ -1,9 +1,30 @@
 
-.main {
-
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
 }
 
+.main {
+    margin: 0;
+    padding: 15px;
+    background-color: yellow;
+    width: 500px;
+    height: 100vh;
+    
+}
+
+.menu-button {
+
+            padding: 0;
+            cursor: pointer;
+    margin: 10px;
+}
+
+
+
 .choice-button {
+    margin: auto;
     background: none;
     border: none;
 	padding: 0;
@@ -14,11 +35,13 @@
     color: red;
 }
 
-#startScreen {
+#start-screen {
     display: block;
 }
 
 #content {
     display: none;
 }
+
+
 
