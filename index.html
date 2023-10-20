@@ -6,29 +6,30 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="Description" content="Enter your description here"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<script src="https://kit.fontawesome.com/295d82d539.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="assets/css/style.css"/>
 <title>LONG AND HARD IS THE ROAD</title>
 </head>
 <body onbeforeunload = "return leavePageAlert()">
-
-        <div id="startScreen">
+    <div>
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-regular fa-user"></i>
+    </div>
+        <div id="startScreen" class="main">
             <h3>long and hard is the way</h3>
             <div><button onclick="startGame()">begin</button></div>
         </div>
-    <div id="content">
+    <div id="content" class="main">
         <h3 id="headingBox"></h3>
         <p id="textBox"></p>
         <div>
-            <button id="northButton" onclick="move('north')">NORTH</button>
-            <button id="southButton" onclick="move('south')">SOUTH</button>
-            <button id="westButton" onclick="move('west')">WEST</button>
-            <button id="eastButton" onclick="move('east')">EAST</button>
+            <button id="northButton" class="choice-button" onclick="move('north')"><i class="fa-solid fa-circle-chevron-up"></i></button>
+            <button id="southButton" class="choice-button" onclick="move('south')"><i class="fa-solid fa-circle-chevron-down"></i></button>
+            <button id="westButton" class="choice-button" onclick="move('west')"><i class="fa-solid fa-circle-chevron-left"></i></button>
+            <button id="eastButton" class="choice-button" onclick="move('east')"><i class="fa-solid fa-circle-chevron-right"></i></button>
         </div>
         <div id="choiceBox">
-            
         </div> 
-        <p id="debug"></p>   
     </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

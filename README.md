@@ -29,7 +29,7 @@ Core Mechanics
 - [x] Moving from room to room.
 - [x] Create alert when user attempts to leave page.
 - [x] Using a 'static' object.
-- [ ] Pick up an object and add it to your inventory.
+- [x] Pick up an object and add it to your inventory.
 - [ ] Use an object in your inventory on another object.
 - [ ] Time-sensitive encounters.
 - [ ] Combat - See COMBAT.
@@ -57,13 +57,20 @@ The start page needed a
 
 BASIC NAVIGATION
 Started by generating the buttons when moving rooms. Too complex/double handing. 
+
+A couple of reasons. When it's formatted properly, generating the buttons on the fly would mean the directions would be in different positions each time the page changes. I think the UX is better this way because you always know where each button is going to be
+
+Like say one page has east and west buttons, you go west, the next page might have north, south and east buttons. Now, the east button is in a different position to the last page.
+
+DISABLING BUTTONS
 changed it to fixed buttons that disable if they lead to a room that doesn't exist.
+I used the following tutorials to help identify whether or not specific array indices exist and then added those as criteria for whether or not buttons are disabled.
 <https://stackoverflow.com/questions/55740746/how-to-find-index-of-empty-object-in-array-of-object#:~:text=You%20can%20use%20Object.,Object%20for%20check%20empty%20object.>
 <https://www.freecodecamp.org/news/check-if-an-object-is-empty-in-javascript/>
 
 Alert When Leaving Page
 
-I followed the information here - <https://www.w3schools.com/tags/ev_onbeforeunload.asp#:~:text=The%20onbeforeunload%20event%20fires%20when>,is%20different%20in%20different%20browsers.>
+This was simple to implement. I followed the information here - <https://www.w3schools.com/tags/ev_onbeforeunload.asp#:~:text=The%20onbeforeunload%20event%20fires%20when>,is%20different%20in%20different%20browsers.>
 
 
 Error
@@ -74,3 +81,6 @@ kill -9 $(ps -A | grep python | awk '{print $1}')
 Using Static Objects
 The main benefit of using the 2D array matrix instead of each button having its own code to change the HTML of the content box is that it allows rooms to be edited far easier. 
 In my basic example, clicking the button for the light switch in room 8, changed the description of room 5 when you return.
+
+Formatting
+Before moving on and working out what to do with the 
