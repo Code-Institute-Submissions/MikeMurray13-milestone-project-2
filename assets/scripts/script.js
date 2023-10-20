@@ -1,7 +1,7 @@
 const roomMatrix = [
     [
-        /*0.0*/ { heading: "Room 1", description: "Room 1", choices: [] },
-        /*0.1*/ { heading: "Room 2", description: "Room 2", choices: ["<button onclick='addInventory(\"sword\")'>SWORD</button>"] },
+        /*0.0*/ { heading: "Room 1", description: "Room 1", choices: ["<button onclick='addInventory(\"sword\")'>SWORD</button>"] },
+        /*0.1*/ {},
         /*0.2*/ { heading: "Room 3", description: "Room 3", choices: [] }
     ],
     [
@@ -34,6 +34,7 @@ function startGame() {
 
 //Basic move function
 function move(dir) {
+    //Updates current coordinates based on which button is pressed
     if (dir == 'north') { gameState.currX -= 1; };
     if (dir == 'south') { gameState.currX += 1 };
     if (dir == 'west') { gameState.currY -= 1 };
@@ -43,9 +44,8 @@ function move(dir) {
     updateContent();
 }
 
-//Displays the values provided by the current room
+//Updates content of current room
 function updateContent() {
-
     let X = gameState.currX;
     let Y = gameState.currY;
 
@@ -54,20 +54,13 @@ function updateContent() {
     document.getElementById('textBox').innerHTML = roomMatrix[X][Y].description;
     document.getElementById('choiceBox').innerHTML = roomMatrix[X][Y].choices;
 
-    //Disables buttons if risk of leaving roomMatrix
-    if (X == 0) { document.getElementById("northButton").disabled = true; } else { document.getElementById("northButton").disabled = false };
-    if (X == (roomMatrix.length - 1)) { document.getElementById("southButton").disabled = true; } else { document.getElementById("southButton").disabled = false; };
-    if (Y == 0) { document.getElementById("westButton").disabled = true; } else { document.getElementById("westButton").disabled = false; };
-    if (Y == (roomMatrix[X].length - 1)) { document.getElementById("eastButton").disabled = true; } else { document.getElementById("eastButton").disabled = false; };
-
-
-    //Disables buttons that lead to empty rooms in roomMatrix
-  //  if (typeof roomMatrix[X-1][Y] !== "object") { document.getElementById("northButton").disabled = true; } else { document.getElementById("northButton").disabled = false; };
-//if (roomMatrix[X+1][Y].length == 0) { document.getElementById("southButton").disabled = true; } else { document.getElementById("southButton").disabled = false; };
- //   if (typeof roomMatrix[X][Y-1] !== "object") { document.getElementById("westButton").disabled = true; } else { document.getElementById("westButton").disabled = false; };
- //   if (typeof roomMatrix[X][Y+1] !== "object") { document.getElementById("eastButton").disabled = true; } else { document.getElementById("eastButton").disabled = false; };
-   
+    //Disables buttons that lead to empty rooms or indices outside of roomMatrix
+    if (X == (roomMatrix.length - 1) || roomMatrix[X + 1][Y].hasOwnProperty('description') == false) { document.getElementById("southButton").disabled = true; } else { document.getElementById("southButton").disabled = false; };
+    if (X == 0 || roomMatrix[X - 1][Y].hasOwnProperty('description') == false) { document.getElementById("northButton").disabled = true; } else { document.getElementById("northButton").disabled = false; };
+    if (Y == (roomMatrix[X].length - 1) || Object.keys(roomMatrix[X][Y + 1]).length === 0) { document.getElementById("eastButton").disabled = true; } else { document.getElementById("eastButton").disabled = false; };
+    if (Y == 0 || Object.keys(roomMatrix[X][Y - 1]).length === 0) { document.getElementById("westButton").disabled = true; } else { document.getElementById("westButton").disabled = false; };
 }
+
 
 
 //Creates an alert when the player tries to leave the page

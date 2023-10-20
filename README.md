@@ -55,6 +55,11 @@ Change HTML of the "content" box to the standard HTML of the main game mode. On 
 
 The start page needed a 
 
+BASIC NAVIGATION
+Started by generating the buttons when moving rooms. Too complex/double handing. 
+changed it to fixed buttons that disable if they lead to a room that doesn't exist.
+<https://stackoverflow.com/questions/55740746/how-to-find-index-of-empty-object-in-array-of-object#:~:text=You%20can%20use%20Object.,Object%20for%20check%20empty%20object.>
+<https://www.freecodecamp.org/news/check-if-an-object-is-empty-in-javascript/>
 
 Alert When Leaving Page
 
