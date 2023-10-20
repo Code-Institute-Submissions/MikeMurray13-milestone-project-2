@@ -83,4 +83,12 @@ The main benefit of using the 2D array matrix instead of each button having its 
 In my basic example, clicking the button for the light switch in room 8, changed the description of room 5 when you return.
 
 Formatting
-Before moving on and working out what to do with the 
+
+
+Before moving on and working out what to do with the inventory I decided to do some basic formatting. 
+
+Bootstrap issue
+After 3 hours of trying to format my code using bootstrap, I realised that the Code Institute Github template only links to Bootstrp 3.3.7. 
+
+Installed Bootstrap via the NPM using the following command -
+npm i bootstrap@5.3.2
