@@ -49,6 +49,8 @@ Large hero image with a start button.
 
 The third-party licence information will either be on the splash screen itself or use a modal to display the information. This will need to be trial and error as I'm not experienced enough wth layout to make that decision beforehand.
 
+Image - 
+<
 Start Game
 Initial Idea 
 Change HTML of the "content" box to the standard HTML of the main game mode. On trying this I found that I was unabl

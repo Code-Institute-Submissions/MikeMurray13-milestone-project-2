@@ -14,15 +14,14 @@
 <div class="main">
     <!--Start screen-->
         <div id="start-screen">
-            <h3>long and hard is the way</h3>
-            <button onclick="startGame()">begin</button>
-
-            <div>[Product name] is an independent production by [Author or Publisher] and is not affiliated with Ockult Örtmästare Games
-            or Stockholm Kartell. It is published under the MÖRK BORG Third Party License.</div>
-            <div>
-            MÖRK BORG is copyright Ockult Örtmästare Games and Stockholm Kartell.
+            <div class="text-center"><h3>long and hard is the way</h3></div>
+            <div class="text-center"><button onclick="startGame()">begin</button></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col license"><i class="fa-solid fa-quote-left"></i><p>[Product name] is an independent production by [Author or Publisher] and is not affiliated with Ockult Örtmästare Games or Stockholm Kartell. It is published under the MÖRK BORG Third Party License.</p></div>
+                    <div class="col license"><i class="fa-solid fa-quote-left"></i><p>MÖRK BORG is copyright Ockult Örtmästare Games and Stockholm Kartell.</p></div>
+                </div>
             </div>
-
         </div>
     <!--Main content-->
     <div id="content">
@@ -37,15 +36,25 @@
         <!--Description-->
         <p id="text-box"></p>
         <!--Direction buttons-->
-        <div class="row text-center">
-            <div id="col-4"><button id="north-button" class="choice-button" onclick="move('north')"><i class="fa-solid fa-circle-chevron-up"></i></button></div>
-            <div id="col-4"><button id="south-button" class="choice-button" onclick="move('south')"><i class="fa-solid fa-circle-chevron-down"></i></button></div>
-            <div id="col-4"><button id="west-button" class="choice-button" onclick="move('west')"><i class="fa-solid fa-circle-chevron-left"></i></button></div>
-            <div id="col-4"><button id="east-button" class="choice-button" onclick="move('east')"><i class="fa-solid fa-circle-chevron-right"></i></button></div>
+<div class="container">
+<div class="row">
+        <div id="directions-box" class="container col-4">
+            <div class="row justify-content-center">
+                <div class="col-4"><button id="north-button" class="choice-button" onclick="move('north')"><i class="fa-solid fa-circle-chevron-up"></i></button></div>
+            </div>
+            <div class="row justify-content-between">
+                <div class="col-4"><button id="west-button" class="choice-button" onclick="move('west')"><i class="fa-solid fa-circle-chevron-left"></i></button></div>
+                <div class="col-4"><button id="east-button" class="choice-button" onclick="move('east')"><i class="fa-solid fa-circle-chevron-right"></i></button></div>
+            </div>
+            <div class="row justify-content-center">
+            <div class="col-4"><button id="south-button" class="choice-button" onclick="move('south')"><i class="fa-solid fa-circle-chevron-down"></i></button></div>
+            </div>
         </div>
         <!--Choices-->
-        <div id="choice-box">
+        <div id="choice-box" class="col-8">
         </div> 
+</div>
+</div>
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
