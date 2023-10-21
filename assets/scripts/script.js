@@ -1,6 +1,6 @@
 const roomMatrix = [
     [
-        /*0.0*/ { heading: "Room 1", description: "Room 1", choices: ["<button onclick='addInventory(\"sword\",\"This is just a sword\",\"onehand\",6,\"yes\",\"no\"); this.disabled=true'>SWORD</button>"] },
+        /*0.0*/ { heading: "Room 1", description: "Room 1", choices: ["<button onclick='addInventory(0,\"sword\",\"This is just a sword\",\"onehand\",6,\"yes\",\"no\"); this.remove()'>SWORD</button>"] },
         /*0.1*/ {},
         /*0.2*/ { heading: "Room 3", description: "Room 3", choices: [] }
     ],
@@ -75,9 +75,12 @@ function lightSwitch() {
     roomMatrix[1][1].description = 'The room is well lit.';
 }
 
-//Adds 'item' to inventory
-function addInventory(item,description,type,value,combat,equipped) {
+
+function addInventory(choiceNumber,item,description,type,value,combat,equipped) {
+    //Adds 'item' to inventory
     player.inventory.push({ item, description, type, value, combat, equipped });
+    //Prevents button from being created in roomMatrix once collected
+    roomMatrix[gameState.currX][gameState.currY].choices.splice(choiceNumber,(choiceNumber+1));
     console.log(player);
 }
 
