@@ -19,17 +19,29 @@
         <!--Main content-->
         <div id="content" class="d-flex flex-column">
             <!--Navigation bar-->
-            <div id="menu-bar" class="clearfix">
+            <div id="menu-bar">
                 <button type="button" data-bs-toggle="collapse" data-bs-target="#menuLeft" aria-expanded="false" aria-controls="menuLeft" class="menu-button float-start"><i class="fa-solid fa-bars"></i></button>
                 <button type="button" data-bs-toggle="collapse" data-bs-target="#menuRight" aria-expanded="false" aria-controls="menuRight" class="menu-button float-end"><i class="fa-regular fa-user"></i></button>
-                <div id="menuLeft" class="menu collapse collapse-horizontal">
+                <div id="menuLeft" class="menu collapse">
                     <div>
-                        LEFT MENU
+                        <h4>
+                            THEME
+                        </h4>
+                        <div>
+                            COLOR BOXES HERE
+                        </div>
+                        <hr>
                     </div>
                 </div>
-                <div id="menuRight" class="menu collapse collapse-horizontal">
-                    <div>
-                        RIGHT MENU
+                <div id="menuRight" class="menu collapse">
+                    <div id="playerStats">
+                        <h4> PLAYER INFO </h4>
+                        <div id="playerName"></div>
+                        <div id="gold"></div>
+                        <div id="leftArm"></div>
+                        <div id="rightArm"></div>
+                        <div id="torso"></div>
+                        <div id="inventory"></div>
                     </div>
                 </div>
             </div>

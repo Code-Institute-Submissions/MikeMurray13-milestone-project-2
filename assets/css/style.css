@@ -10,7 +10,7 @@ body {
 }
 
 .main {
-    margin: 0px;
+    margin: 0 auto;
     padding: 0px;
     width: 500px;
     height: 100%;
@@ -138,16 +138,17 @@ body {
     margin-top: 61px;
         padding-top: 50px;
         width: 500px;
-        padding-bottom: 100vh;
         z-index: 1;
     }
 
 #menuLeft {
     color: white;
-    background-color: darkgrey;
 }
 
 #menuRight {
     color: white;
-    background-color: grey;
+}
+
+#playerStats {
+    margin: 20px;
 }

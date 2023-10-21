@@ -27,7 +27,7 @@ let player = {
     gold: 0,
     handL: 'fist',
     handR: 'fist',
-    armor: 'rags',
+    torso: 'rags',
     inventory: []
 };
 
@@ -50,6 +50,12 @@ function updateContent() {
     let X = gameState.currX;
     let Y = gameState.currY;
 
+    document.getElementById('playerName').innerHTML = player.name;
+    document.getElementById('gold').innerHTML = player.gold;
+    document.getElementById('leftArm').innerHTML = player.handL;
+    document.getElementById('rightArm').innerHTML = player.handR;
+    document.getElementById('torso').innerHTML = player.torso;
+    document.getElementById('inventory').innerHTML = player.inventory;
 
     //Empties choice box
     document.getElementById('choice-box').innerHTML = "";
