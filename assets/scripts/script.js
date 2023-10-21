@@ -1,18 +1,18 @@
 const roomMatrix = [
     [
-        /*0.0*/ { heading: "Room 1", description: "Room 1", choices: ["<button onclick='addInventory(0,\"Chipped Sword\",\"Slightly better than an old femur.\",\"onehand\",6,\"yes\",\"no\"); this.remove()'>Chipped Sword</button>", "<button onclick='addInventory(1,\"Cracked Shield\",\"You can see right through it.\",\"shield\",1,\"yes\",\"no\"); this.remove()'>Cracked Shield</button>"] },
+        /*0.0*/ { heading: "Room 1", description: "Room 1", choices: [] },
         /*0.1*/ {},
-        /*0.2*/ { heading: "Room 3", description: "Room 3", choices: ["<button onclick='addInventory(0,\"Rusty Chainmail\",\"Watch out for tetanus!\",\"armor\",2,\"no\",\"no\"); this.remove()'>Rusty Chainmail</button>"] }
+        /*0.2*/ { heading: "Room 3", description: "Room 3", choices: [] }
     ],
     [
         /*1.0*/ { heading: "Room 4", description: "Room 4", choices: [] },
-        /*1.1*/ { heading: "Room 5", description: "The room is dark.", choices: [] },
+        /*1.1*/ { heading: "Room 5", description: "The room is dark.", choices: ["<button class=\"choice-button\" onclick='addInventory(0,\"Chipped Sword\",\"Slightly better than an old femur.\",\"onehand\",6,\"yes\",\"no\"); this.remove()'>Chipped Sword</button>", "<button class=\"choice-button\" onclick='addInventory(1,\"Cracked Shield\",\"You can see right through it.\",\"shield\",1,\"yes\",\"no\"); this.remove()'>Cracked Shield</button>", "<button class=\"choice-button\" onclick='addInventory(2,\"Rusty Chainmail\",\"Watch out for tetanus!\",\"armor\",2,\"no\",\"no\"); this.remove()'>Rusty Chainmail</button>"] },
         /*1.2*/ { heading: "Room 6", description: "Room 6", choices: [] }
     ],
     [
         /*2.0*/ { heading: "Room 7", description: "Room 7", choices: [] },
         /*2.1*/ {},
-        /*2.2*/ { heading: "Room 9", description: "Room 9", choices: ["<button onclick='lightSwitch()'>LIGHT SWITCH</button>"] }
+        /*2.2*/ { heading: "Room 9", description: "Room 9", choices: ["<button class=\"choice-button\" onclick='lightSwitch()'>LIGHT SWITCH</button>"] }
     ]
 ];
 
@@ -58,8 +58,9 @@ function updateContent() {
     document.getElementById('heading-box').innerHTML = roomMatrix[X][Y].heading;
     document.getElementById('text-box').innerHTML = roomMatrix[X][Y].description;
     
+    //Adds all buttons in the choices array for each room
     for (let button of roomMatrix[X][Y].choices) { 
-        document.getElementById('choice-box').innerHTML += button + "<br>";
+        document.getElementById('choice-box').innerHTML += button;
     }
 
     //Disables buttons that lead to empty rooms or indices outside of roomMatrix

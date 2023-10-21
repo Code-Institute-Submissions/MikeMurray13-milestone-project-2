@@ -80,7 +80,6 @@ body {
 
 #controls {
     margin: 20px;
-    background-color: green;
 }
 
 #start-screen {
@@ -111,4 +110,18 @@ body {
     color: grey;
 }
 
+#choice-box {
+    padding: 7px 0 7px 30px;
+}
 
+.choice-button {
+    background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    color: white;
+    background-color: black;
+    display: block;
+    padding: 4px 10px;
+    margin: 5px 0 ;
+}
