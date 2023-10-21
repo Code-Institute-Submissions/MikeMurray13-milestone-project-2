@@ -1,8 +1,8 @@
 const roomMatrix = [
     [
-        /*0.0*/ { heading: "Room 1", description: "Room 1", choices: ["<button onclick='addInventory(0,\"sword\",\"This is just a sword\",\"onehand\",6,\"yes\",\"no\"); this.remove()'>SWORD</button>"] },
+        /*0.0*/ { heading: "Room 1", description: "Room 1", choices: ["<button onclick='addInventory(0,\"Chipped Sword\",\"Slightly better than an old femur.\",\"onehand\",6,\"yes\",\"no\"); this.remove()'>Chipped Sword</button>", "<button onclick='addInventory(1,\"Cracked Shield\",\"You can see right through it.\",\"shield\",1,\"yes\",\"no\"); this.remove()'>Cracked Shield</button>"] },
         /*0.1*/ {},
-        /*0.2*/ { heading: "Room 3", description: "Room 3", choices: [] }
+        /*0.2*/ { heading: "Room 3", description: "Room 3", choices: ["<button onclick='addInventory(0,\"Rusty Chainmail\",\"Watch out for tetanus!\",\"armor\",2,\"no\",\"no\"); this.remove()'>Rusty Chainmail</button>"] }
     ],
     [
         /*1.0*/ { heading: "Room 4", description: "Room 4", choices: [] },
@@ -50,10 +50,17 @@ function updateContent() {
     let X = gameState.currX;
     let Y = gameState.currY;
 
+
+    //Empties choice box
+    document.getElementById('choice-box').innerHTML = "";
+
     //updates values of each room
     document.getElementById('heading-box').innerHTML = roomMatrix[X][Y].heading;
     document.getElementById('text-box').innerHTML = roomMatrix[X][Y].description;
-    document.getElementById('choice-box').innerHTML = roomMatrix[X][Y].choices;
+    
+    for (let button of roomMatrix[X][Y].choices) { 
+        document.getElementById('choice-box').innerHTML += button + "<br>";
+    }
 
     //Disables buttons that lead to empty rooms or indices outside of roomMatrix
     if (X == (roomMatrix.length - 1) || roomMatrix[X + 1][Y].hasOwnProperty('description') == false) { document.getElementById("south-button").disabled = true; } else { document.getElementById("south-button").disabled = false; };
@@ -80,7 +87,7 @@ function addInventory(choiceNumber,item,description,type,value,combat,equipped) 
     //Adds 'item' to inventory
     player.inventory.push({ item, description, type, value, combat, equipped });
     //Prevents button from being created in roomMatrix once collected
-    roomMatrix[gameState.currX][gameState.currY].choices.splice(choiceNumber,(choiceNumber+1));
+    roomMatrix[gameState.currX][gameState.currY].choices[choiceNumber] = "";
     console.log(player);
 }
 
