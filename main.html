@@ -16,7 +16,7 @@
 <body onload="updateContent()" onbeforeunload="return leavePageAlert()">
     <div class="main container">
         <!--Main content-->
-        <div id="content">
+        <div id="content" class="d-flex flex-column">
             <!--Navigation bar-->
             <div id="menu-bar" class="clearfix">
                 <button class="menu-button float-start"><i class="fa-solid fa-bars"></i></button>
@@ -27,22 +27,33 @@
             <!--Description-->
             <p id="text-box"></p>
             <!--Direction buttons-->
-            <div id="controls" class="container">
+            <div id="controls" class="mt-auto">
                 <div class="row">
-                    <div id="directions-box" class="container col-4">
+                    <div id="direction-box" class="container col-4 direction-button">
                         <div class="row justify-content-center">
-                            <div class="col-4"><button id="north-button" class="choice-button"
-                                    onclick="move('north')"><i class="fa-solid fa-circle-chevron-up"></i></button></div>
+                            <div class="col-4">
+                                <button id="north-button" class="direction-button" onclick="move('north')">
+                                    <i class="fa-solid fa-circle-chevron-up"></i>
+                                </button>
+                            </div>
                         </div>
                         <div class="row justify-content-between">
-                            <div class="col-4"><button id="west-button" class="choice-button" onclick="move('west')"><i
-                                        class="fa-solid fa-circle-chevron-left"></i></button></div>
-                            <div class="col-4"><button id="east-button" class="choice-button" onclick="move('east')"><i
-                                        class="fa-solid fa-circle-chevron-right"></i></button></div>
+                            <div class="col-4">
+                                <button id="west-button" class="direction-button" onclick="move('west')">
+                                    <i class="fa-solid fa-circle-chevron-left"></i>
+                                </button>
+                            </div>
+                            <div class="col-4">
+                                <button id="east-button" class="direction-button" onclick="move('east')">
+                                    <i class="fa-solid fa-circle-chevron-right"></i>
+                                </button>
+                            </div>
                         </div>
                         <div class="row justify-content-center">
-                            <div class="col-4"><button id="south-button" class="choice-button"
-                                    onclick="move('south')"><i class="fa-solid fa-circle-chevron-down"></i></button>
+                            <div class="col-4">
+                                <button id="south-button" class="direction-button" onclick="move('south')">
+                                    <i class="fa-solid fa-circle-chevron-down"></i>
+                                </button>
                             </div>
                         </div>
                     </div>

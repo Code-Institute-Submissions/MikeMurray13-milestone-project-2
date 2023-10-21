@@ -11,7 +11,7 @@ body {
 
 .main {
     margin: 0px;
-        padding: 0px;
+    padding: 0px;
     width: 500px;
     height: 100vh;
     background-color: orange;
@@ -55,41 +55,43 @@ body {
     line-height: 30px;
 }
 
-#directions-box {
+#direction-box {
     height: 150px;
     width: 150px;
 }
 
-.choice-button {
+.direction-button {
     margin: 0;
-        padding: 0;
+    padding: 0;
     background: none;
     border: none;
 	cursor: pointer;
     height:50px;
     width:50px;
-      line-height: 50px;
-
-font-size: 50px;
+    line-height: 50px;
+    font-size: 50px;
 }
 
 
 
-.choice-button:disabled {
+.direction-button:disabled {
     color: red;
 }
 
 #controls {
-    margin: 30px;
+    margin: 20px;
+    background-color: green;
 }
 
 #start-screen {
     height: 100%;
-        padding: 0;
-            margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 #content {
+        padding: 0;
+            margin: 0;
     width: 100%;
     height: 100%;
 }
@@ -104,7 +106,7 @@ font-size: 50px;
 #text-box {
     font-size: large;
     margin: 10px;
-    padding: 0 15 20 15;
+    padding: 0 50 20 50;
     text-align: justify;
     color: grey;
 }

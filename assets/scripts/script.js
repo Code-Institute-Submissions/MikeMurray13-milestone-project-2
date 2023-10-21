@@ -1,6 +1,6 @@
 const roomMatrix = [
     [
-        /*0.0*/ { heading: "Room 1", description: "Room 1", choices: ["<button onclick='addInventory(\"sword\",\"This is just a sword\",\"onehand\",6,\"yes\",\"no\"); this.remove()'>SWORD</button>"] },
+        /*0.0*/ { heading: "Room 1", description: "Room 1", choices: ["<button onclick='addInventory(\"sword\",\"This is just a sword\",\"onehand\",6,\"yes\",\"no\"); this.disabled=true'>SWORD</button>"] },
         /*0.1*/ {},
         /*0.2*/ { heading: "Room 3", description: "Room 3", choices: [] }
     ],
@@ -65,11 +65,10 @@ function updateContent() {
 
 
 //Creates an alert when the player tries to leave the page
-/*
 function leavePageAlert() {
     return "Leaving will cause you to lose any unsaved progress...";
 }
-*/
+
 
 //Turns the light on in Room 5
 function lightSwitch() {
