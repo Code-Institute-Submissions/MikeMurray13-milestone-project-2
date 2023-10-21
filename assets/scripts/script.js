@@ -10,7 +10,7 @@ const roomMatrix = [
         /*1.2*/ { heading: "Room 6", description: "Room 6", choices: [] }
     ],
     [
-        /*2.0*/ { heading: "Room 7", description: "Room 7", choices: [] },
+        /*2.0*/ { heading: "Room 7", description: "Room 7", choices: ["<button class=\"choice-button\" onclick='gold(0,5); this.remove()'>TAKE 5 GOLD</button>"] },
         /*2.1*/ {},
         /*2.2*/ { heading: "Room 9", description: "Room 9", choices: ["<button class=\"choice-button\" onclick='lightSwitch()'>LIGHT SWITCH</button>"] }
     ]
@@ -50,6 +50,7 @@ function updateContent() {
     let X = gameState.currX;
     let Y = gameState.currY;
 
+    //Updates all player info divs
     document.getElementById('playerName').innerHTML = player.name;
     document.getElementById('gold').innerHTML = player.gold;
     document.getElementById('leftArm').innerHTML = player.handL;
@@ -57,7 +58,16 @@ function updateContent() {
     document.getElementById('torso').innerHTML = player.torso;
     document.getElementById('inventory').innerHTML = player.inventory;
 
-    //Empties choice box
+    //Only add item names to inventory
+    document.getElementById('inventory').innerHTML = "";
+    for (let item of player.inventory) {
+        document.getElementById('inventory').innerHTML += item.itemName;
+    }
+
+
+
+
+    //Empties choice box to prevent duplicates
     document.getElementById('choice-box').innerHTML = "";
 
     //updates values of each room
@@ -90,11 +100,19 @@ function lightSwitch() {
 }
 
 
-function addInventory(choiceNumber,item,description,type,value,combat,equipped) {
+function addInventory(choiceNumber,itemName,description,type,value,combat,equipped) {
     //Adds 'item' to inventory
-    player.inventory.push({ item, description, type, value, combat, equipped });
+    player.inventory.push({ itemName, description, type, value, combat, equipped });
     //Prevents button from being created in roomMatrix once collected
     roomMatrix[gameState.currX][gameState.currY].choices[choiceNumber] = "";
-    console.log(player);
+    //Update content so player dropdown shows up to date information
+    updateContent(); 
+
 }
 
+//Allows player to pick up gold they find
+function gold(choiceNumber, amount) {
+    player.gold += amount;
+    roomMatrix[gameState.currX][gameState.currY].choices[choiceNumber] = "";
+    updateContent();
+}
