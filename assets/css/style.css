@@ -3,7 +3,7 @@
 
 body {
     width: 100%;
-        height: 100%;
+        height: 100vh;
         margin: 0px;
         padding: 0px;
     background-color: black;
@@ -13,7 +13,7 @@ body {
     margin: 0px;
     padding: 0px;
     width: 500px;
-    height: 100vh;
+    height: 100%;
     background-color: orange;
 }
 
@@ -43,7 +43,14 @@ body {
     font-size: 30px;
 }
 
-
+#menu-bar {
+        position: fixed;
+            top: 0;
+            left: 0;
+            width: 500px;
+    z-index: 2;
+    background-color: black; 
+}
 
 .menu-button {
     background: none;
@@ -53,6 +60,7 @@ body {
     margin: 15px;
     font-size: 30px;
     line-height: 30px;
+    color: white;
 }
 
 #direction-box {
@@ -98,14 +106,14 @@ body {
 #heading-box {
     font-size: xx-large;
     text-align: center;
-    padding: 5 10 10 10;
+    padding: 80px 10px 10px 10px;
     color: white;
 }
 
 #text-box {
     font-size: large;
     margin: 10px;
-    padding: 0 50 20 50;
+    padding: 0 50px 20px 50px;
     text-align: justify;
     color: grey;
 }
@@ -124,4 +132,22 @@ body {
     display: block;
     padding: 4px 10px;
     margin: 5px 0 ;
+}
+
+.menu {
+    margin-top: 61px;
+        padding-top: 50px;
+        width: 500px;
+        padding-bottom: 100vh;
+        z-index: 1;
+    }
+
+#menuLeft {
+    color: white;
+    background-color: darkgrey;
+}
+
+#menuRight {
+    color: white;
+    background-color: grey;
 }
