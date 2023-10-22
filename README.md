@@ -49,13 +49,21 @@ Large hero image with a start button.
 
 The third-party licence information will either be on the splash screen itself or use a modal to display the information. This will need to be trial and error as I'm not experienced enough wth layout to make that decision beforehand.
 
-Image - 
-<
+
+
 Start Game
 Initial Idea 
-Change HTML of the "content" box to the standard HTML of the main game mode. On trying this I found that I was unabl
+Change HTML of the "content" box to the standard HTML of the main game mode. On trying this I found that I was unable to manage this as it required completely reformatting the page in a way that was for more complicated than necessary. 
 
-The start page needed a 
+The start page needed to display the license information and I wanted it to be obvious it was set in the MB universe. Currently the only available logo to do this is the "Compatible with..." logo. As the project isn't strictly "conmpoapitble" with MB, I reached out to the creator of the game who advised that this is the only logo available the moment but that they might look into new logos in the future to reflect products such as this. 
+
+To refelct the style of MB, I wanted to minimise the colours used on the front page, opting for black and white with a strong accent colour. I decided to only use the accent colour on the most important elements: the title and the start button. 
+
+This is a scheme I've used on another project of my own previously and received some great feedback for. 
+
+Include link to image in docs ***
+
+Image - https://commons.wikimedia.org/wiki/File:Francisco_de_Goya,_Saturno_devorando_a_su_hijo_(1819-1823).jpg
 
 BASIC NAVIGATION
 Started by generating the buttons when moving rooms. Too complex/double handing. 
@@ -94,3 +102,9 @@ After 3 hours of trying to format my code using bootstrap, I realised that the C
 
 Installed Bootstrap via the NPM using the following command -
 npm i bootstrap@5.3.2
+
+
+Themes
+
+I copied in the theme information from a learning project I created before starting the course. Mork Borg has a very strong visual style with several vibrant colour schemes. I thought it was important to see them represented. 
+***link or upload here
