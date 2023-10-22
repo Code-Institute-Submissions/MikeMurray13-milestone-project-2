@@ -49,9 +49,9 @@
                         <h4> PLAYER INFO </h4>
                         <div id="playerName"></div>
                         <div id="gold"></div>
-                        <div>Left Hand: <select id="leftHand" onchange="updateInventory(this.value)"></select></div>
-                        <div>Right Hand: <select id="rightHand" onchange="updateInventory(this.value)"></select></div>
-                        <div id="torso">Torso: </div>
+                        <div>Left Hand: <select id="leftHand" onchange="updateInventory(this.value,'handL')"></select></div>
+                        <div>Right Hand: <select id="rightHand" onchange="updateInventory(this.value,'handR')"></select></div>
+                        <div>Torso: <select id="torso" onchange="updateInventory(this.value,'torso')"></select></div>
                         <div id="inventory"></div>
                     </div>
                 </div>

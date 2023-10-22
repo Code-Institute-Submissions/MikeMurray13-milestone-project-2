@@ -66,12 +66,12 @@ function updateContent() {
 
     //Creates array for drop down menu
     let equipHand = player.inventory.filter(item => item.combat === "yes" && (item.type === "onehand" || item.type === "shield") && item.equipped === "no");
-    console.log(equipHand);
-
+    let equipTorso = player.inventory.filter(item => item.type === "torso" && item.equipped === "no");
 
     //Empties inventory before populating it
     document.getElementById("leftHand").innerHTML = "<option value=" + player.handL.itemName + ">" + player.handL.itemName + "</option>";
     document.getElementById("rightHand").innerHTML = "<option value=" + player.handR.itemName + ">" + player.handR.itemName + "</option>";
+    document.getElementById("torso").innerHTML = "<option value=" + player.torso.itemName + ">" + player.torso.itemName + "</option>";
 
 
 
@@ -89,6 +89,14 @@ function updateContent() {
         o.text = item.itemName;
         o.value = item.itemName;
         document.getElementById("rightHand").appendChild(o);
+    }
+
+    //Populates leftHand drop down with items equippable to hand slots
+    for (let item of equipTorso) {
+        const o = document.createElement("option");
+        o.text = item.itemName;
+        o.value = item.itemName;
+        document.getElementById("torso").appendChild(o);
     }
 
 
@@ -160,7 +168,21 @@ function resetcurrentcolor() {
 
 
 
-function updateInventory(item) {
+function updateInventory(item,slot) {
     //find the first instance of item and change it to equipped
-    console.log(item)
+    const equippedItem = player.inventory.find((element) => element.itemName === item);
+    equippedItem.equipped = "yes";
+
+    switch (slot) {
+        case "handL":
+            player.handL = equippedItem;
+            break;
+        case "handR":
+            player.handR = equippedItem;
+            break;
+        case "torso":
+            player.torso = equippedItem;
+            break;
+    }
+    updateContent();
 }
