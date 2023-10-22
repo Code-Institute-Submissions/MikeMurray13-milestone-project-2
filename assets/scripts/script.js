@@ -74,10 +74,9 @@ function updateContent() {
     let equipTorso = player.inventory.filter(item => item.type === "torso");
 
     //Empties inventory before populating it
-
-    document.getElementById("leftHand").innerHTML = "<option value=" + player.handL.itemName + ">" + player.handL.itemName + "</option>";
-    document.getElementById("rightHand").innerHTML = "<option value=" + player.handR.itemName + ">" + player.handR.itemName + "</option>";
-    document.getElementById("torso").innerHTML = "<option value=" + player.torso.itemName + ">" + player.torso.itemName + "</option>";
+    player.handL != "" ? document.getElementById("leftHand").innerHTML = "<option value=" + player.handL.itemName + ">" + player.handL.itemName + "</option>" : document.getElementById("leftHand").innerHTML = "<option></option>";
+    player.handR != "" ? document.getElementById("rightHand").innerHTML = "<option value=" + player.handR.itemName + ">" + player.handR.itemName + "</option>" : document.getElementById("rightHand").innerHTML = "<option></option>";;
+    player.torso != "" ? document.getElementById("torso").innerHTML = "<option value=" + player.torso.itemName + ">" + player.torso.itemName + "</option>" : document.getElementById("torso").innerHTML = "<option></option>";;
 
 
 
@@ -178,23 +177,28 @@ function resetcurrentcolor() {
 
 
 function updateInventory(item,slot) {
-    //find the first instance of item and change it to equipped
+
     const equippedItem = player.inventory.find((element) => element.itemName === item);
     index = player.inventory.indexOf(equippedItem);
-    console.log(equippedItem)
-    console.log(index);
+
+    //Splices equipped item from inventory
+    //Pushes the players currently equipped item back into their inventory
+    //Updates currently equipped item in appropriate slot
     switch (slot) {
         case "handL":
-            player.inventory.splice(index, 1)
+            player.inventory.splice(index, 1);
+            player.handL != "" ? player.inventory.push(player.handL) : "";
             player.handL = equippedItem;
             break;
         case "handR":
-            player.handR = equippedItem;
             player.inventory.splice(index, 1);
+            player.handR != "" ? player.inventory.push(player.handR) : "";
+            player.handR = equippedItem;
             break;
         case "torso":
-            player.torso = equippedItem;
             player.inventory.splice(index, 1);
+            player.torso != "" ? player.inventory.push(player.torso) : "";
+            player.torso = equippedItem;
             break;
     }
     updateContent();
