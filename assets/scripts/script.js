@@ -116,3 +116,17 @@ function gold(choiceNumber, amount) {
     roomMatrix[gameState.currX][gameState.currY].choices[choiceNumber] = "";
     updateContent();
 }
+
+//Change theme
+var currentcolor = "white";
+function changetheme(theme) {
+    currentcolor = theme;
+    document.getElementById("page").className = theme;
+}
+
+function themename(color) {
+    currentcolor = document.getElementById("colorname").innerHTML;
+    document.getElementById("colorname").innerHTML = color;
+}
+
+function resetcurrentcolor() { document.getElementById("colorname").innerHTML = currentcolor; }

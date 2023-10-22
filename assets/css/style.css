@@ -1,11 +1,78 @@
 
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&family=REM&family=Righteous&display=swap');
 
+::-webkit-scrollbar-thumb {
+    background: var(--maintext);
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+:root.white {
+    --background: white;
+    --maintext: black;
+    --heading: black;
+    --maintextlink: #FF3EB5;
+    --maintextover: black;
+}
+
+
+:root.yellow {
+    --background: #FFE900;
+    --maintext: black;
+    --heading: black;
+    --maintextlink: white;
+    --maintextover: black;
+}
+
+:root.pink {
+    --background: #FF3EB5;
+    --maintext: black;
+    --heading: white;
+    --maintextlink: white;
+    --maintextover: black;
+}
+
+:root.black {
+    --background: black;
+    --maintext: white;
+    --heading: #FF3EB5;
+    --maintextlink: white;
+    --maintextover: #FF3EB5;
+}
+
+:root.green {
+    --background: #31ED31;
+    --maintext: black;
+    --heading: white;
+    --maintextlink: white;
+    --maintextover: black;
+}
+
+.hovertext {
+    color: var(--maintextlink);
+}
+
+.colorpicker {
+    height: 20px;
+    width: 20px;
+}
+
+.colorpicker:hover {
+    outline: 2px solid white;
+}
+
+#colourgrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
 body {
     width: 100%;
-        height: 100vh;
-        margin: 0px;
-        padding: 0px;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
     background-color: black;
 }
 
@@ -14,7 +81,7 @@ body {
     padding: 0px;
     width: 500px;
     height: 100%;
-    background-color: orange;
+    background-color: var(--background);
 }
 
 .container {
@@ -78,6 +145,7 @@ body {
     width:50px;
     line-height: 50px;
     font-size: 50px;
+    
 }
 
 
@@ -107,7 +175,7 @@ body {
     font-size: xx-large;
     text-align: center;
     padding: 80px 10px 10px 10px;
-    color: white;
+color: var(--heading);
 }
 
 #text-box {
@@ -115,7 +183,7 @@ body {
     margin: 10px;
     padding: 0 50px 20px 50px;
     text-align: justify;
-    color: grey;
+    color: var(--maintext)
 }
 
 #choice-box {
@@ -127,8 +195,8 @@ body {
         border: none;
         padding: 0;
         cursor: pointer;
-    color: white;
-    background-color: black;
+    color: var(--maintextover);
+    background-color: var(--maintextlink);
     display: block;
     padding: 4px 10px;
     margin: 5px 0 ;
