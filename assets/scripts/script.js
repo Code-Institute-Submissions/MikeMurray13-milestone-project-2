@@ -6,7 +6,7 @@ const roomMatrix = [
     ],
     [
         /*1.0*/ { heading: "Room 4", description: "Room 4", choices: [] },
-        /*1.1*/ { heading: "Room 5", description: "The room is dark.", choices: ["<button class=\"choice-button\" onclick='addInventory(0,\"Chipped Sword\",\"Slightly better than an old femur.\",\"onehand\",6,\"yes\",\"no\"); this.remove()'>Chipped Sword</button>", "<button class=\"choice-button\" onclick='addInventory(1,\"Cracked Shield\",\"You can see right through it.\",\"shield\",1,\"yes\",\"no\"); this.remove()'>Cracked Shield</button>", "<button class=\"choice-button\" onclick='addInventory(2,\"Rusty Chainmail\",\"Watch out for tetanus!\",\"armor\",2,\"no\",\"no\"); this.remove()'>Rusty Chainmail</button>"] },
+        /*1.1*/ { heading: "Room 5", description: "The room is dark.", choices: ["<button class=\"choice-button\" onclick='addInventory(0,\"Chipped Sword\",\"Slightly better than an old femur.\",\"onehand\",6,\"yes\",\"no\"); this.remove()'>Chipped Sword</button>", "<button class=\"choice-button\" onclick='addInventory(1,\"Cracked Shield\",\"You can see right through it.\",\"shield\",1,\"yes\",\"no\"); this.remove()'>Cracked Shield</button>", "<button class=\"choice-button\" onclick='addInventory(2,\"Rusty Chainmail\",\"Watch out for tetanus!\",\"torso\",2,\"no\",\"no\"); this.remove()'>Rusty Chainmail</button>"] },
         /*1.2*/ { heading: "Room 6", description: "Room 6", choices: [] }
     ],
     [
@@ -25,9 +25,9 @@ let gameState = {
 let player = {
     name: 'Mr Choppy',
     gold: 0,
-    handL: 'fist',
-    handR: 'fist',
-    torso: 'rags',
+    handL: { itemName: "Fists", description: "Weapons of last resort.", type: "onehand", value: 2, combat: "yes", equipped: "yes" },
+    handR: { itemName: "Fists", description: "Weapons of last resort.", type: "onehand", value: 2, combat: "yes", equipped: "yes" },
+    torso: { itemName: "Rags", description: "More than enough to cover your shame.", type: "torso", value: 0, combat: "no", equipped: "yes" },
     inventory: []
 };
 
@@ -68,9 +68,12 @@ function updateContent() {
     let equipHand = player.inventory.filter(item => item.combat === "yes" && (item.type === "onehand" || item.type === "shield") && item.equipped === "no");
     console.log(equipHand);
 
+
     //Empties inventory before populating it
-    document.getElementById("leftHand").innerHTML = "";
-    document.getElementById("rightHand").innerHTML = "";
+    document.getElementById("leftHand").innerHTML = "<option value=" + player.handL.itemName + ">" + player.handL.itemName + "</option>";
+    document.getElementById("rightHand").innerHTML = "<option value=" + player.handR.itemName + ">" + player.handR.itemName + "</option>";
+
+
 
     //Populates leftHand drop down with items equippable to hand slots
     for (let item of equipHand) {
@@ -159,4 +162,5 @@ function resetcurrentcolor() {
 
 function updateInventory(item) {
     //find the first instance of item and change it to equipped
+    console.log(item)
 }
