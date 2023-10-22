@@ -41,6 +41,25 @@ Core Mechanics
 - [ ] Option to save game.
 - [ ] Scoreboard.
 
+Ultimately I failed to achieve the whole list but the "game" contains the following features - 
+
+* Start screen
+  * Third party license information
+  * Start button
+* Main content
+  * set of functional direction buttons that move the player around a 2D matrix array of rooms
+  * each room is an object with properties that can be edited on the fly
+  * Created a light switch that turns on the light in another room
+    * The light switch updates the text in the current room, the target room, and disables the button
+  * Player is an object with slots and value that can be edited
+  * Implemented several collectibles
+    * Sword, shield, and armour
+    * Sword pickup that can only be found if the light is switched on
+    * Collectibles can be equipped in the player menu
+      * When equipping an item it takes it from the inventory so it can't be double equipped
+      * When new item is equipped, old item is pushed back into inventory
+    * Gold can be collected and updates player object's gold value
+* Colour scheme can be changed in the settings menu
 ***Umlaut information
 
 SPLASH SCREEN
@@ -118,3 +137,6 @@ Equip items
 Followed the following tutorial to populate the drop down box with an array.
 
 - <https://www.youtube.com/shorts/ZMZ4Mne1RdU>
+
+
+improve rooms by losing the 2D array. Instead each room object would have north south east and west keys. The dfirection buttons would then lead to the array reference of the value in each of those keys. This would cut down on the number of empty rooms/objects in the roomMatrix. This would require the "map" to be drawn or otherwise planned externally to the script. 
