@@ -1,33 +1,38 @@
 const roomMatrix = [
     [
-        /*0.0*/ { heading: "Room 1", description: "Room 1", choices: [] },
-        /*0.1*/ {},
-        /*0.2*/ { heading: "Room 3", description: "Room 3", choices: [] }
+        /*0.0*/ {},
+        /*0.1*/ { heading: "Boss Fight!", description: "Room 1", choices: [] },
+        /*0.2*/ {}
     ],
     [
-        /*1.0*/ { heading: "Room 4", description: "Room 4", choices: [] },
-        /*1.1*/ { heading: "Room 5", description: "The room is dark.", choices: ["<button class=\"choice-button\" onclick='addInventory(0,\"Chipped Sword\",\"Slightly better than an old femur.\",\"onehand\",6,\"yes\",\"no\"); this.remove()'>Chipped Sword</button>", "<button class=\"choice-button\" onclick='addInventory(1,\"Cracked Shield\",\"You can see right through it.\",\"shield\",1,\"yes\",\"no\"); this.remove()'>Cracked Shield</button>", "<button class=\"choice-button\" onclick='addInventory(2,\"Rusty Chainmail\",\"Watch out for tetanus!\",\"torso\",2,\"no\",\"no\"); this.remove()'>Rusty Chainmail</button>"] },
-        /*1.2*/ { heading: "Room 6", description: "Room 6", choices: [] }
+        /*1.0*/ { heading: "Dark Room", description: "The room is dark.", choices: [ "<button class=\"choice-button\" disabled onclick='addInventory(0,\"VERY Fancy Sword\",\"It is incredibly sharp and shiny!\",\"onehand\",10,\"yes\"); this.remove()'>You see nothing...</button>" ] },
+        /*1.1*/ { heading: "Room 6", description: "Room 3", choices: [] },
+        /*1.2*/ {}
     ],
     [
-        /*2.0*/ { heading: "Room 7", description: "Room 7", choices: ["<button class=\"choice-button\" onclick='gold(0,5); this.remove()'>TAKE 5 GOLD</button>"] },
-        /*2.1*/ {},
-        /*2.2*/ { heading: "Room 9", description: "Room 9", choices: ["<button class=\"choice-button\" onclick='lightSwitch()'>LIGHT SWITCH</button>"] }
+        /*2.0*/ { heading: "Room 7", description: "Room 4", choices: [] },
+        /*2.1*/ { heading: "Room 8", description: "", choices: ["<button class=\"choice-button\" onclick='addInventory(0,\"Chipped Sword\",\"Slightly better than an old femur.\",\"onehand\",6,\"yes\"); this.remove()'>Chipped Sword</button>", "<button class=\"choice-button\" onclick='addInventory(1,\"Cracked Shield\",\"You can see right through it.\",\"shield\",1,\"yes\"); this.remove()'>Cracked Shield</button>", "<button class=\"choice-button\" onclick='addInventory(2,\"Rusty Chainmail\",\"Watch out for tetanus!\",\"torso\",2,\"no\"); this.remove()'>Rusty Chainmail</button>"] },
+        /*2.2*/ { heading: "Room 9", description: "Room 6", choices: [] }
+    ],
+    [
+        /*3.0*/ { heading: "Room 10", description: "Room 7", choices: ["<button class=\"choice-button\" onclick='gold(0,5); this.remove()'>TAKE 5 GOLD</button>"] },
+        /*3.1*/ {},
+        /*3.2*/ { heading: "Room 12", description: "Room 9", choices: ["<button class=\"choice-button\" onclick='lightSwitch()'>LIGHT SWITCH</button>"] }
     ]
 ];
 
 let gameState = {
     //Game starts with starting room declared as the current room
-    currX: 1,
+    currX: 2,
     currY: 1
 };
 
 let player = {
     name: 'Mr Choppy',
     gold: 0,
-    handL: { itemName: "Fists", description: "Weapons of last resort.", type: "onehand", value: 2, combat: "yes", equipped: "yes" },
-    handR: { itemName: "Fists", description: "Weapons of last resort.", type: "onehand", value: 2, combat: "yes", equipped: "yes" },
-    torso: { itemName: "Rags", description: "More than enough to cover your shame.", type: "torso", value: 0, combat: "no", equipped: "yes" },
+    handL: "",
+    handR: "",
+    torso: "",
     inventory: []
 };
 
@@ -65,13 +70,16 @@ function updateContent() {
     }
 
     //Creates array for drop down menu
-    let equipHand = player.inventory.filter(item => item.combat === "yes" && (item.type === "onehand" || item.type === "shield") && item.equipped === "no");
-    let equipTorso = player.inventory.filter(item => item.type === "torso" && item.equipped === "no");
+    let equipHand = player.inventory.filter(item => item.combat === "yes" && (item.type === "onehand" || item.type === "shield"));
+    let equipTorso = player.inventory.filter(item => item.type === "torso");
 
     //Empties inventory before populating it
+
     document.getElementById("leftHand").innerHTML = "<option value=" + player.handL.itemName + ">" + player.handL.itemName + "</option>";
     document.getElementById("rightHand").innerHTML = "<option value=" + player.handR.itemName + ">" + player.handR.itemName + "</option>";
     document.getElementById("torso").innerHTML = "<option value=" + player.torso.itemName + ">" + player.torso.itemName + "</option>";
+
+
 
 
 
@@ -129,13 +137,14 @@ function leavePageAlert() {
 
 //Turns the light on in Room 5
 function lightSwitch() {
-    roomMatrix[1][1].description = 'The room is well lit.';
+    roomMatrix[1][0].description = 'The room is well lit.';
+    roomMatrix[1][0].choices[0] = "<button class=\"choice-button\" onclick='addInventory(0,\"VERY Fancy Sword\",\"It is incredibly sharp and shiny!\",\"onehand\",10,\"yes\"); this.remove()'>Shiny Sword</button>";
 }
 
 
-function addInventory(choiceNumber,itemName,description,type,value,combat,equipped) {
+function addInventory(choiceNumber,itemName,description,type,value,combat) {
     //Adds 'item' to inventory
-    player.inventory.push({ itemName, description, type, value, combat, equipped });
+    player.inventory.push({ itemName, description, type, value, combat });
     //Prevents button from being created in roomMatrix once collected
     roomMatrix[gameState.currX][gameState.currY].choices[choiceNumber] = "";
     //Update content so player dropdown shows up to date information
@@ -171,17 +180,21 @@ function resetcurrentcolor() {
 function updateInventory(item,slot) {
     //find the first instance of item and change it to equipped
     const equippedItem = player.inventory.find((element) => element.itemName === item);
-    equippedItem.equipped = "yes";
-
+    index = player.inventory.indexOf(equippedItem);
+    console.log(equippedItem)
+    console.log(index);
     switch (slot) {
         case "handL":
+            player.inventory.splice(index, 1)
             player.handL = equippedItem;
             break;
         case "handR":
             player.handR = equippedItem;
+            player.inventory.splice(index, 1);
             break;
         case "torso":
             player.torso = equippedItem;
+            player.inventory.splice(index, 1);
             break;
     }
     updateContent();
