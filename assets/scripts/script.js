@@ -6,18 +6,20 @@ const roomMatrix = [
     ],
     [
         /*1.0*/ { heading: "Dark Room", description: "The room is dark.", choices: [ "<button class=\"choice-button\" disabled onclick='addInventory(0,\"VERY Fancy Sword\",\"It is incredibly sharp and shiny!\",\"onehand\",10,\"yes\"); this.remove()'>You see nothing...</button>" ] },
-        /*1.1*/ { heading: "Room 6", description: "Room 3", choices: [] },
+        /*1.1*/ { heading: "ANTECHAMBER", description: "You hear a ", choices: [] },
         /*1.2*/ {}
     ],
     [
         /*2.0*/ { heading: "Room 7", description: "Room 4", choices: [] },
-        /*2.1*/ { heading: "Room 8", description: "", choices: ["<button class=\"choice-button\" onclick='addInventory(0,\"Chipped Sword\",\"Slightly better than an old femur.\",\"onehand\",6,\"yes\"); this.remove()'>Chipped Sword</button>", "<button class=\"choice-button\" onclick='addInventory(1,\"Cracked Shield\",\"You can see right through it.\",\"shield\",1,\"yes\"); this.remove()'>Cracked Shield</button>", "<button class=\"choice-button\" onclick='addInventory(2,\"Rusty Chainmail\",\"Watch out for tetanus!\",\"torso\",2,\"no\"); this.remove()'>Rusty Chainmail</button>"] },
+        /*2.1*/ { heading: "Room 8", description: "", choices: ["<button class=\"choice-button\" onclick='addInventory(0,\"Chipped Sword\",\"Slightly better than an old femur.\",\"onehand\",6,\"yes\"); this.remove()'>Chipped Sword</button>",
+                                                                 "<button class=\"choice-button\" onclick='addInventory(1,\"Cracked Shield\",\"You can see right through it.\",\"shield\",1,\"yes\"); this.remove()'>Cracked Shield</button>", 
+                                                                 ] },
         /*2.2*/ { heading: "Room 9", description: "Room 6", choices: [] }
     ],
     [
         /*3.0*/ { heading: "Room 10", description: "Room 7", choices: ["<button class=\"choice-button\" onclick='gold(0,5); this.remove()'>TAKE 5 GOLD</button>"] },
         /*3.1*/ {},
-        /*3.2*/ { heading: "Room 12", description: "Room 9", choices: ["<button class=\"choice-button\" onclick='lightSwitch()'>LIGHT SWITCH</button>"] }
+        /*3.2*/ { heading: "Room 12", description: "Room 9", choices: ["<button class=\"choice-button\" onclick='lightSwitch(); this.remove();'>LIGHT SWITCH</button>", "<button class=\"choice-button\" onclick='addInventory(1,\"Rusty Chainmail\",\"Watch out for tetanus!\",\"torso\",2,\"no\"); this.remove()'>Rusty Chainmail</button>"] }
     ]
 ];
 
@@ -138,6 +140,9 @@ function leavePageAlert() {
 function lightSwitch() {
     roomMatrix[1][0].description = 'The room is well lit.';
     roomMatrix[1][0].choices[0] = "<button class=\"choice-button\" onclick='addInventory(0,\"VERY Fancy Sword\",\"It is incredibly sharp and shiny!\",\"onehand\",10,\"yes\"); this.remove()'>Shiny Sword</button>";
+    roomMatrix[gameState.currX][gameState.currY].description += '<br>The light switch sparks! Nothing changes. Not in this room at least...';
+    roomMatrix[gameState.currX][gameState.currY].choices[0] = "<button disabled class=\"choice-button\">Charred Switch</button>";
+    updateContent();
 }
 
 
