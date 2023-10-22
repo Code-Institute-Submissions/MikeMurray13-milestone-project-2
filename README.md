@@ -6,6 +6,10 @@ The design and story will be heavily themed around the material and world create
 
 I have already created a pamphlet adventure for Mork Borg and relaased it via Kickstarter. I considered translating that adventure for this project but the content might be a little too graphic. You can download the free pdf here (only suitable for 18+) - ***Link to Oyster Ditch
 
+User Experience
+
+***
+
 DESIGN
 
 Colour choice as players decision as opposed to changed automatically in case players dislike the lurid greens/yellows, etc. Not just for fans of the game.
@@ -22,6 +26,8 @@ You can read about the choose-your-own-adventure format here - <https://en.wikip
 Scope
 
 The goal of the project will be to construct just enough narrative to tie together scenes together to demonstrate both the core mechanics and my ability to use Javascript. These are listed in order of importance. I aim to include as many of these as I can. I would like to continue to grow the project in o a full story. 
+
+
 
 Core Mechanics
 
