@@ -113,3 +113,8 @@ Buttons
 Half way through the project I changed the styling of the disabled buttons from red to 0.5 opacity. This allowed me to match the styling of the direction buttons to the choice buttons without a clashing colour (red) ruining the palette. The only other option was using colours within tach theme's palette to reflect that they were disabled but this meant that there was no clear distinction as to which were disabled and which were active. 
 
 I also changed the buttons toward the end as being able to see through them to the background colours didn't look right. 
+
+Equip items 
+Followed the following tutorial to populate the drop down box with an array.
+
+- <https://www.youtube.com/shorts/ZMZ4Mne1RdU>

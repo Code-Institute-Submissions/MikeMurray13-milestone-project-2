@@ -55,14 +55,19 @@
 }
 
 body {
-    margin: 0px;
-    padding: 0px;
+    width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden;
     background-color: black;
 }
 
 .main {
+    max-width: 768px;
     height: 100vh;
     width: 100vw;
+    margin: 0 auto;
     background-color: var(--background);
 }
 
@@ -73,10 +78,13 @@ body {
 
 .row {
     --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
 }
 
-#license-box {
-    margin: 10px;
+
+
+#license-info {
+    margin: 0 auto;
 }
 
 .license {
@@ -97,8 +105,8 @@ body {
         position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
     z-index: 2;
+    width: 100vw;
     background-color: black; 
 }
 
@@ -113,9 +121,13 @@ body {
     color: white;
 }
 
+#rotblack { 
+    border: 1px white solid;
+}
+
 #direction-box {
-    height: 150px;
-    width: 150px;
+    height: 120px;
+    width: 120px;
 }
 
 .direction-button {
@@ -131,11 +143,13 @@ body {
     color: var(--color2)
 }
 
-
-
 .direction-button:disabled {
     opacity: 0.5;
 }
+
+
+
+
 
 #controls {
     
@@ -150,11 +164,11 @@ body {
 }
 
 #background-image {
-    height: 100vh;
+width: 100vw;
 object-fit: cover;
+object-position: center;
     position: absolute;
-    top: 0;
-    left:0;
+
     z-index: -1;
             filter: grayscale(100%) contrast(150%);
 }
@@ -223,8 +237,7 @@ color: var(--color2);
 
 #compatibleWith {
     margin: 0 auto;
-    height: 50%;
-    width:50%; 
+    width:30%; 
 }
 
 #gameTitle {

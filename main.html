@@ -25,21 +25,20 @@
                 <div id="menuLeft" class="menu collapse">
                     <div>
                         <h4>
-                            THEME
+                            THEME <span id="colorname"></span>
                         </h4>
                         <div>
-                                <div id="colorname">m&ouml;rk yellow</div>
                                 <div id="colourgrid">
                                     <div style="background-color: #FFE900;" class="colorpicker" onclick="changetheme('yellow')"
-                                        onmouseover="themename('MORK YELLOW')" onmouseout="resetcurrentcolor()"></div>
+                                        onmouseover="themename('m&ouml;rk yellow')" onmouseout="resetcurrentcolor()"></div>
                                     <div style="background-color: #FF3EB5;" class="colorpicker" onclick="changetheme('pink')"
-                                        onmouseover="themename('pink')" onmouseout="resetcurrentcolor()"></div>
-                                    <div style="background-color: black;" class="colorpicker" onclick="changetheme('black')"
+                                        onmouseover="themename('pi/unk')" onmouseout="resetcurrentcolor()"></div>
+                                    <div id="rotblack" style="background-color: black;" class="colorpicker" onclick="changetheme('black')"
                                         onmouseover="themename('ROTBLACK')" onmouseout="resetcurrentcolor()"></div>
                                     <div style="background-color: #31ED31;" class="colorpicker" onclick="changetheme('green')"
                                         onmouseover="themename('SVMP green')" onmouseout="resetcurrentcolor()"></div>
                                     <div style="background-color: white;" class="colorpicker" onclick="changetheme('white')"
-                                        onmouseover="themename('white')" onmouseout="resetcurrentcolor()"></div>
+                                        onmouseover="themename('Ash White')" onmouseout="resetcurrentcolor()"></div>
                                 </div>
                         </div>
                         <hr>
@@ -50,9 +49,9 @@
                         <h4> PLAYER INFO </h4>
                         <div id="playerName"></div>
                         <div id="gold"></div>
-                        <div id="leftArm"></div>
-                        <div id="rightArm"></div>
-                        <div id="torso"></div>
+                        <div>Left Hand: <select id="leftHand" onchange="updateInventory(this.value)">  </select></div>
+                        <div>Right Hand: <select id="rightHand"></select></div>
+                        <div id="torso">Torso: </div>
                         <div id="inventory"></div>
                     </div>
                 </div>

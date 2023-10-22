@@ -53,18 +53,40 @@ function updateContent() {
     //Updates all player info divs
     document.getElementById('playerName').innerHTML = player.name;
     document.getElementById('gold').innerHTML = player.gold;
-    document.getElementById('leftArm').innerHTML = player.handL;
-    document.getElementById('rightArm').innerHTML = player.handR;
     document.getElementById('torso').innerHTML = player.torso;
     document.getElementById('inventory').innerHTML = player.inventory;
 
     //Only add item names to inventory
     document.getElementById('inventory').innerHTML = "";
     for (let item of player.inventory) {
-        document.getElementById('inventory').innerHTML += item.itemName;
+        document.getElementById('inventory').innerHTML += "<div>" + item.itemName + "</div>";
+
+
     }
 
+    //Creates array for drop down menu
+    let equipHand = player.inventory.filter(item => item.combat === "yes" && (item.type === "onehand" || item.type === "shield") && item.equipped === "no");
+    console.log(equipHand);
 
+    //Empties inventory before populating it
+    document.getElementById("leftHand").innerHTML = "";
+    document.getElementById("rightHand").innerHTML = "";
+
+    //Populates leftHand drop down with items equippable to hand slots
+    for (let item of equipHand) {
+        const o = document.createElement("option");
+        o.text = item.itemName;
+        o.value = item.itemName;
+        document.getElementById("leftHand").appendChild(o);
+    }
+
+    //Populates leftHand drop down with items equippable to hand slots
+    for (let item of equipHand) {
+        const o = document.createElement("option");
+        o.text = item.itemName;
+        o.value = item.itemName;
+        document.getElementById("rightHand").appendChild(o);
+    }
 
 
     //Empties choice box to prevent duplicates
@@ -118,15 +140,23 @@ function gold(choiceNumber, amount) {
 }
 
 //Change theme
-var currentcolor = "white";
 function changetheme(theme) {
-    currentcolor = theme;
     document.getElementById("page").className = theme;
 }
 
+//Temporarily shows the name of the color when hovered over
 function themename(color) {
-    currentcolor = document.getElementById("colorname").innerHTML;
-    document.getElementById("colorname").innerHTML = color;
+    document.getElementById("colorname").innerText = "[ " + color + " ]"
 }
 
-function resetcurrentcolor() { document.getElementById("colorname").innerHTML = currentcolor; }
+//Changes the name back to blank when mouse leaves color square
+function resetcurrentcolor() {
+    document.getElementById("colorname").innerHTML = "";
+}
+
+
+
+
+function updateInventory(item) {
+    //find the first instance of item and change it to equipped
+}
