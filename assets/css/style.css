@@ -57,6 +57,12 @@
 #colourgrid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 200px;
+    margin: 50px;
+}
+
+#themeHeading {
+    margin-left: 50px;
 }
 
 /*--------------------*/
@@ -187,7 +193,8 @@ body {
 }
 
 #playerStats {
-    margin: 20px;
+    width: 200px;
+    margin: 50px;
 }
 
 #inventory {
