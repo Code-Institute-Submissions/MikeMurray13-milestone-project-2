@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&family=REM&family=Righteous&display=swap');
 
 ::-webkit-scrollbar-thumb {
-    background: var(--maintext);
+    background: var(--color1);
 }
 
 ::-webkit-scrollbar {
@@ -11,47 +11,33 @@
 
 :root.white {
     --background: white;
-    --maintext: black;
-    --heading: black;
-    --maintextlink: #FF3EB5;
-    --maintextover: black;
+    --color1: black;
+    --color2: #FF3EB5;
 }
 
 
 :root.yellow {
     --background: #FFE900;
-    --maintext: black;
-    --heading: black;
-    --maintextlink: white;
-    --maintextover: black;
+    --color1: black;
+    --color2: black;
 }
 
 :root.pink {
     --background: #FF3EB5;
-    --maintext: black;
-    --heading: white;
-    --maintextlink: white;
-    --maintextover: black;
+    --color1: black;
+    --color2: white;
 }
 
 :root.black {
     --background: black;
-    --maintext: white;
-    --heading: #FF3EB5;
-    --maintextlink: white;
-    --maintextover: #FF3EB5;
+    --color1: white;
+    --color2: #FF3EB5;
 }
 
 :root.green {
     --background: #31ED31;
-    --maintext: black;
-    --heading: white;
-    --maintextlink: white;
-    --maintextover: black;
-}
-
-.hovertext {
-    color: var(--maintextlink);
+    --color1: black;
+    --color2: white;
 }
 
 .colorpicker {
@@ -146,7 +132,7 @@ body {
     width:50px;
     line-height: 50px;
     font-size: 50px;
-    
+    color: var(--color2)
 }
 
 
@@ -189,7 +175,7 @@ object-fit: cover;
     font-size: xx-large;
     text-align: center;
     padding: 80px 10px 10px 10px;
-color: var(--heading);
+color: var(--color2);
 }
 
 #text-box {
@@ -197,7 +183,7 @@ color: var(--heading);
     margin: 10px;
     padding: 0 50px 20px 50px;
     text-align: justify;
-    color: var(--maintext)
+    color: var(--color1)
 }
 
 #choice-box {
@@ -209,8 +195,8 @@ color: var(--heading);
         border: none;
         padding: 0;
         cursor: pointer;
-    color: var(--maintextover);
-    background-color: var(--maintextlink);
+    color: var(--color1);
+    background-color: var(--color2);
     display: block;
     padding: 4px 10px;
     margin: 5px 0 ;

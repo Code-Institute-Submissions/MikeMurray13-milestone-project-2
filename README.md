@@ -108,3 +108,6 @@ Themes
 
 I copied in the theme information from a learning project I created before starting the course. Mork Borg has a very strong visual style with several vibrant colour schemes. I thought it was important to see them represented. 
 ***link or upload here
+
+Buttons
+Half way through the project I changed the styling of the disabled buttons from red to 0.5 opacity. This allowed me to match the styling of the direction buttons to the choice buttons without a clashing colour (red) ruining the palette. The only other option was using colours within tach theme's palette to reflect that they were disabled but this meant that there was no clear distinction as to which were disabled and which were active. 
