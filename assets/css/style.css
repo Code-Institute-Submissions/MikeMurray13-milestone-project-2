@@ -75,6 +75,7 @@ body {
 
 .main {
     max-width: 768px;
+    height: 100vh;
     margin: 0 auto;
 }
 
@@ -93,15 +94,17 @@ body {
 /*--------------------*/
 
 #start-screen {
-    padding: 0;
-    margin: 0;
+    width: 100%;
+    margin: 0 auto;
 }
 
 #background-image {
-    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100vw;
     object-fit: cover;
     object-position: center;
-    position: absolute;
     z-index: -1;
     filter: grayscale(100%) contrast(150%);
 }
@@ -185,6 +188,10 @@ body {
 
 #playerStats {
     margin: 20px;
+}
+
+#inventory {
+    border: 1px white solid;
 }
 
 #heading-box {

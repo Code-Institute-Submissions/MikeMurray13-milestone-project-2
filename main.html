@@ -46,12 +46,16 @@
                 <div id="menuRight" class="menu collapse">
                     <div id="playerStats">
                         <h4> PLAYER INFO </h4>
-                        <div id="playerName"></div>
-                        <div id="gold"></div>
-                        <div>Left Hand: <select id="leftHand" onchange="updateInventory(this.value,'handL')"></select></div>
-                        <div>Right Hand: <select id="rightHand" onchange="updateInventory(this.value,'handR')"></select></div>
-                        <div>Torso: <select id="torso" onchange="updateInventory(this.value,'torso')"></select></div>
-                        <div id="inventory"></div>
+                        <div>PLAYER NAME: <span id="playerName"></span></div>
+                        <div>GOLD:  <span id="gold"></span></div>
+                        <div><label for="leftHand">LEFT HAND:</label>  <select id="leftHand" onchange="updateInventory(this.value,'handL')"></select></div>
+                        <div><label for="rightHand">RIGHT HAND:</label>  <select id="rightHand" onchange="updateInventory(this.value,'handR')"></select></div>
+                        <div><label for="torso">TORSO:</label>  <select id="torso" onchange="updateInventory(this.value,'torso')"></select></div>
+                        <div>
+                            INVENTORY: <div id="inventory">
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
