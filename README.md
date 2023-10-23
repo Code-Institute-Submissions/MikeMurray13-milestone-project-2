@@ -14,7 +14,7 @@ DESIGN
 
 Colour choice as players decision as opposed to changed automatically in case players dislike the lurid greens/yellows, etc. Not just for fans of the game.
 
-***include links to Johan Nohr's design manifesto. 
+https://docs.google.com/document/d/1j0ZhSZ7NFY_Yo1Ak1nnL1cwdzVrOOyXHkGPnBxYPsxg/edit#heading=h.a7wtjr6j2bj3 
 
 THIRD PARTY LICENCE
 Mork Borg has a third-party licence. It allows creators to make money from any products they create from it. Creators have to include specific information somewhere on their project. The licence allows creators to use aspects of the Mork Borg rulebook such as mechanics, place names, and some creatures.
