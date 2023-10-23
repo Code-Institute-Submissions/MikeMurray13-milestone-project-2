@@ -1,38 +1,52 @@
-PROJECT IDEA
+# Milestone Project #2 - Choose Your Own Adventure Game
+
+## Proposal
 
 Create a short choose-your-own-adventure as a proof of concept for a larger project.
 
-The design and story will be heavily themed around the material and world created for the tabletop roleplaying game, Mork Borg*. Mork Borg has a bold visual style that I love and would like to emulate.
+The design and story will be heavily themed around the material and world created for the tabletop roleplaying game, Mork Borg. Mork Borg has a bold visual style that I love and would like to emulate. You can find out more about Mork Borg [here](https://morkborg.com/)
 
-I have already created a pamphlet adventure for Mork Borg and relaased it via Kickstarter. I considered translating that adventure for this project but the content might be a little too graphic. You can download the free pdf here (only suitable for 18+) - ***Link to Oyster Ditch
+I have already created a pamphlet adventure for Mork Borg and released it via Kickstarter. I considered translating that specific adventure for this project but the content might be a little too graphic. You can download the free pdf [here](https://redgod.itch.io/the-oyster-ditch)  if you're curious - (only suitable for 18+)
 
-User Experience
+## User Experience
 
-***
+The ultimate experience is ahat of an interactive novel. Players can choose where to go and in what order to do things. There will be very basic puzzle/inventory/combat elements but really it's just another way for players to explore the world of Mork Borg.
 
-DESIGN
+## Scope
 
-Colour choice as players decision as opposed to changed automatically in case players dislike the lurid greens/yellows, etc. Not just for fans of the game.
+The goal of the project will be to construct just enough narrative to tie together scenes together to demonstrate both the core mechanics and my ability to use Javascript. These are listed in order of importance. I aim to include as many of these as I can. I would like to continue to grow the project in o a full story.
 
-https://docs.google.com/document/d/1j0ZhSZ7NFY_Yo1Ak1nnL1cwdzVrOOyXHkGPnBxYPsxg/edit#heading=h.a7wtjr6j2bj3 
+## Design
 
-THIRD PARTY LICENCE
+Colour choice should be the player's decision as opposed to changing automatically as not all users will appreciate the lurid scheme used in Mork Borg products. This project should ideally be usaable by not just fans of the game.
+
+Several fans have already created a design primer to emulate the Mork Borg style. I have used this in the past and found it incredibly useful. You can find the design primer [here](https://docs.google.com/document/d/1j0ZhSZ7NFY_Yo1Ak1nnL1cwdzVrOOyXHkGPnBxYPsxg/edit#heading=h.a7wtjr6j2bj3).
+
+Johan Nohr, the art director and artist, has also released several blog posts about his style. You can find them [here](https://threadreaderapp.com/thread/1276532452627034112.html) and [here](https://threadreaderapp.com/thread/1275739369735929856.html).
+
+### Third Party License
+
 Mork Borg has a third-party licence. It allows creators to make money from any products they create from it. Creators have to include specific information somewhere on their project. The licence allows creators to use aspects of the Mork Borg rulebook such as mechanics, place names, and some creatures.
 
-For more information on the Mork Borg third-party licence, see here - <https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjerNqr7PyBAxVaW0EAHerpBUIQFnoECA4QAQ&url=https%3A%2F%2Fliberludorum.com%2F2021%2F07%2F05%2Fthe-mork-borg-third-party-license-you%2F&usg=AOvVaw3YTWA8FG2jswu0qQE8RIYG&opi=89978449>
+For more information on the Mork Borg third-party licence, see [here](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjerNqr7PyBAxVaW0EAHerpBUIQFnoECA4QAQ&url=https%3A%2F%2Fliberludorum.com%2F2021%2F07%2F05%2Fthe-mork-borg-third-party-license-you%2F&usg=AOvVaw3YTWA8FG2jswu0qQE8RIYG&opi=89978449).
 
-You can read about the choose-your-own-adventure format here - <https://en.wikipedia.org/wiki/Choose_Your_Own_Adventure> and here - <https://en.wikipedia.org/wiki/Fighting_Fantasy>
+You can read about the choose-your-own-adventure format [here](https://en.wikipedia.org/wiki/Choose_Your_Own_Adventure) and [here](https://en.wikipedia.org/wiki/Fighting_Fantasy).
 
-Scope
+## Tools
 
-The goal of the project will be to construct just enough narrative to tie together scenes together to demonstrate both the core mechanics and my ability to use Javascript. These are listed in order of importance. I aim to include as many of these as I can. I would like to continue to grow the project in o a full story. 
+* Codeanywhere - IDE
+* Google Fonts
+* Font Awesome - Icons
+* Bootstrap 5 - Layout and some functionality
+* FREEFORMATTER.COM - Beautify code before final submission
+* Pixelied and TinyPNG - Reduce loading time of splash screen image
+* w3 Validator - Check codes for errors
+* Github - Hosting and deployment
 
+## Core Mechanics
 
-
-Core Mechanics
-
-- [x] Splash screen, licence information.
-- [x] Moving from room to room.
+[x] Splash screen, licence information.
+[x] Moving from room to room.
 - [x] Create alert when user attempts to leave page.
 - [x] Using a 'static' object.
 - [x] Pick up an object and add it to your inventory.
@@ -66,14 +80,16 @@ Ultimately I failed to achieve the whole list but the "game" contains the follow
       * When new item is equipped, old item is pushed back into inventory
     * Gold can be collected and updates player object's gold value
 * Colour scheme can be changed in the settings menu
-***Umlaut information
 
-SPLASH SCREEN
+## Elements
 
-Large hero image with a start button.
+### Splash Screen
+
+Due to time constraints, I was unable to fix the formatting issue on the start page. I was only aware of this error in the last few hours before submission and was unable to trace the cause.
+
+I wanted a large image on the front page. I have released a project previously using a very similar style and received really positive feedback. You can see the previous project [here](https://redgod.itch.io/cewri).
 
 The third-party licence information will either be on the splash screen itself or use a modal to display the information. This will need to be trial and error as I'm not experienced enough wth layout to make that decision beforehand.
-
 
 
 Start Game
@@ -88,7 +104,7 @@ This is a scheme I've used on another project of my own previously and received 
 
 Include link to image in docs ***
 
-Image - https://commons.wikimedia.org/wiki/File:Francisco_de_Goya,_Saturno_devorando_a_su_hijo_(1819-1823).jpg
+The image I used on the start screen is Saturn Eating His Son. It's available for free under the Creative Commons license and can be found [here](https://commons.wikimedia.org/wiki/File:Francisco_de_Goya,_Saturno_devorando_a_su_hijo_(1819-1823).jpg)
 
 BASIC NAVIGATION
 Started by generating the buttons when moving rooms. Too complex/double handing. 
