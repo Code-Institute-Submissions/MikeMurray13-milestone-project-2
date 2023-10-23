@@ -52,6 +52,7 @@ You can read about the choose-your-own-adventure format [here](https://en.wikipe
 * w3 Validator - Check codes for errors
 * Github - Hosting and deployment
 * Balsamiq - Wireframes
+* jshint - Testing
 
 ## Core Mechanics
 
@@ -172,6 +173,10 @@ I also changed the buttons toward the end as being able to see through them to t
 I followed [this](https://www.youtube.com/shorts/ZMZ4Mne1RdU) tutorial to populate the drop down box with the correct items from the inventory.
 
 I filtered the players inventory for each slot so they could only equip certain kinds of items in certain slots. For example, you can't equip a chainmail shirt to your hands.
+
+## Testing
+
+I ran the code through JSHINT and there were no errors there that appeared to be urgent fixes. Half of them were unneccessary semi-colons and when I removed them it said they were missing semi-colons.
 
 ## Ideas for Improvement
 
