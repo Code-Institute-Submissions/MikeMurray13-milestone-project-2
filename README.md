@@ -1,5 +1,7 @@
 # Milestone Project #2 - Choose Your Own Adventure Game
 
+[DEPLOYED PAGE](https://mikemurray13.github.io/milestone-project-2/main.html)
+
 ## Proposal
 
 Create a short choose-your-own-adventure as a proof of concept for a larger project.
@@ -38,6 +40,9 @@ You can read about the choose-your-own-adventure format [here](https://en.wikipe
 
 ## Tools
 
+* HTML - Markup
+* CSS - Styling
+* Javascript - Interactivity and logic
 * Codeanywhere - IDE
 * Google Fonts
 * Font Awesome - Icons
@@ -46,6 +51,7 @@ You can read about the choose-your-own-adventure format [here](https://en.wikipe
 * Pixelied and TinyPNG - Reduce loading time of splash screen image
 * w3 Validator - Check codes for errors
 * Github - Hosting and deployment
+* Balsamiq - Wireframes
 
 ## Core Mechanics
 
@@ -170,3 +176,19 @@ I filtered the players inventory for each slot so they could only equip certain 
 ## Ideas for Improvement
 
 Improve rooms by losing the 2D array. Instead each room object would have north, south, east, and west keys. The direction buttons would then lead to the array reference of the value in each of those keys. This would cut down on the number of empty rooms/objects in the roomMatrix. This would require the "map" to be drawn or otherwise planned externally to the script.
+
+# Deployed Page
+
+Deployed using GitHub Pages.
+
+1. Navigate to Github repository, ensuring there is an index.html file there (the main page).
+2. Click settings.
+3. Under Code and Automation, select pages.
+4. Under "Build and deployment", under "Source", select Deploy from a branch. Choose Main branch and /root.
+5. Save.
+6. Wait a few minutes and refresh the page.
+7. At the top of the pages menu, there should be a link to the deployed page.
+
+I decided the use the official tutorial rather than refer back to the example on the course as the workflow of finding information this way is closer to how the information would be found when working in a typical role. There could also potentially be some new material/information.
+
+The deployed page can be found [here](https://mikemurray13.github.io/milestone-project-2/main.html).
