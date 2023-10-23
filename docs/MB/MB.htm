@@ -1,0 +1,209 @@
+<!--warning when navigating away from page-->
+<!--open submission form-->
+<!--open donation page-->
+<!--display result overlay-->
+<!--every third line or so offset-->
+<!--random line shift added to random angle-->
+<!--player count-->
+<!--template for enemy result-->
+<!--choose to set timer to finish session with boss battle not activated until the final 30 mins or so-->
+
+
+
+<!DOCTYPE html>
+<html lang="en" id="page" class="white">
+<head>
+<title>Test</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script>var menuonoff = 0;</script>
+</head>
+
+<body>
+
+<div id="sidemenu">
+
+<div id="menucontent">
+	<div id="colorname">m&ouml;rk yellow</div>
+	<div id="colourgrid">
+		<div style="background-color: #FFE900;" class="colorpicker" onclick="changetheme('yellow')" onmouseover="themename('MORK YELLOW')" onmouseout="resetcurrentcolor()"></div>
+		<div style="background-color: #FF3EB5;" class="colorpicker" onclick="changetheme('pink')" onmouseover="themename('pink')" onmouseout="resetcurrentcolor()"></div>
+		<div style="background-color: black;" class="colorpicker" onclick="changetheme('black')" onmouseover="themename('ROTBLACK')" onmouseout="resetcurrentcolor()"></div>
+		<div style="background-color: #31ED31;" class="colorpicker" onclick="changetheme('green')" onmouseover="themename('SVMP green')" onmouseout="resetcurrentcolor()"></div>
+		<div style="background-color: white;" class="colorpicker" onclick="changetheme('white')" onmouseover="themename('white')" onmouseout="resetcurrentcolor()"></div>
+		</div>
+
+<hr style="color: white;">
+
+
+	<div id="diceroller">
+	<div><button class="dicebutton" type="button" onclick="rolldice(2)">d2</button></div>
+	<div><button class="dicebutton" type="button" onclick="rolldice(4)">d4</button></div>
+	<div><button class="dicebutton" type="button" onclick="rolldice(6)">d6</button></div>
+	<div><button class="dicebutton" type="button" onclick="rolldice(6)">d8</button></div>
+	<div><button class="dicebutton" type="button" onclick="rolldice(10)">d10</button></div>
+	<div><button class="dicebutton" type="button" onclick="rolldice(12)">d12</button></div>
+	<div><button class="dicebutton" type="button" onclick="rolldice(20)">d20</button></div>
+	<div><button class="dicebutton" type="button" onclick="rolldice(66)">d66</button></div>
+	<div><button class="dicebutton" type="button" onclick="rolldice(100)">d100</button></div>
+	<div><button class="dicebutton" type="button" onclick="customdiceminus()">-</button></div>
+	<div><button class="dicebutton" type="button" id="customdice" onclick="rolldice('custom')">3</button></div>
+	<div><button class="dicebutton" type="button" onclick="customdiceplus()">+</button></div></div>
+
+	<div id="result"></div>
+ 
+
+<hr style="color: white;">	
+
+	<div>Submissions</div>
+	<div>Donate</div>
+
+<hr style="color: white;">
+
+<div><p>[Product name] is an independent production by [Author or Publisher] and is not affiliated with Ockult Örtmästare Games or Stockholm Kartell. It is published under the MÖRK BORG Third Party License.</p></div>
+<div><p>MÖRK BORG is copyright Ockult Örtmästare Games and Stockholm Kartell.</p></div>
+
+	<div onclick="toggleFullScreen()">Full Screen</div>
+
+</div>
+
+</div>
+
+
+
+</div>
+
+<button id="openbutton"><img src="images/menubutton.png" alt="menu button" height="30px" onclick="openbutton()"></button>
+
+
+
+
+<div id="maingrid">
+	<div id="left">
+		<div id="dialoguebox">Opening body of text.<br></div>
+		<div id="startbuttondiv"><img src="images/startbutton.png" alt="start button" height="75px" onclick="start()"></div>
+	</div>
+		
+	<div id="right"></div>
+	
+</div>
+
+
+
+
+
+<script>
+
+
+
+
+function start()
+{
+var dicesize = 6;
+let roll = Math.floor(Math.random() * dicesize + 1);
+var ang = Math.random() * (361 - 359) + 359;
+var randomangle = "<span style=\"transform: rotate(" + ang + "deg); -ms-transform: rotate(" + ang + "deg); -webkit-transform: rotate(" + ang + "deg); display: inline-block;\">";
+if (roll === 1) {document.getElementById("dialoguebox").innerHTML += randomangle + "Random Event 1! This is an example of text that is purely descriptive and designed to be read or used as a prompt for roleplay." + "</span><br>"};
+if (roll === 2) {document.getElementById("dialoguebox").innerHTML += randomangle + "Random Event 2! This is designed to have a piece of hyperlinked <span class=\"hovertext\" onclick=\"texttest()\">text</span> that can be interacted with if the player or players decide to do so." + "</span><br>"};
+if (roll === 3) {document.getElementById("dialoguebox").innerHTML += randomangle + "Random Event 3! This is a randomly generated environment. <insert random generation code here>" + "</span><br>"};
+if (roll === 4) {document.getElementById("dialoguebox").innerHTML += randomangle + "Random Event 4! This generates an NPC in the right window with a choose your adventure style conversation." + "</span><br>"};
+if (roll === 5) {document.getElementById("dialoguebox").innerHTML += randomangle + "Random Event 5! This is contributed content. There should be a little <span onmouseover=\"contribute(This would be the contributor's text of choice!)\">&#9432;</span> symbol containing the contributors preferred text." + "</span><br>"};
+if (roll === 6) {document.getElementById("dialoguebox").innerHTML += randomangle + "You are attacked by an enemy! A PAIR OF MASSIVE TROLLS!<br>" + "</span><br>"; troll()};
+document.getElementById("dialoguebox").scrollTo(0, document.getElementById("dialoguebox").scrollHeight);
+}
+
+function troll()
+{
+document.getElementById("right").innerHTML = "";
+let howmany = 2;
+for (let counter = 0; counter < howmany; counter++)	
+{
+document.getElementById("right").innerHTML += "<div style=\"margin: 20px 20px 0px 20px; padding: 5px; outline: 1px solid white; display:grid; grid-template-columns:1fr 2fr; grid-template-rows: 1fr 1fr;\"><div>IMG</div><div><div>TROLL</div><div>- 30hp +</div ></div><div style=\"grid-column:1/span 2\"><strong>SPECIAL RULE #1</strong> This is the first special rule.<br><strong>SPECIAL RULE #2</strong> This is the second special rule.</div></div>";
+}
+}
+
+contributor(text)
+{}
+	
+
+
+
+
+
+function texttest()
+{document.getElementById("dialoguebox").innerHTML += "The element of text slips through your mind like veinworms.<br>";
+document.getElementById("dialoguebox").scrollTo(0, document.getElementById("dialoguebox").scrollHeight);}
+
+
+//COMPLETED SCRIPTS
+
+
+var currentcolor = "white";
+function changetheme(theme)
+{currentcolor = theme;
+document.getElementById("page").className = theme;}
+
+function themename(color)
+{currentcolor = document.getElementById("colorname").innerHTML;
+document.getElementById("colorname").innerHTML = color;}
+
+function resetcurrentcolor()
+{document.getElementById("colorname").innerHTML = currentcolor;}
+
+
+
+function openbutton() 
+{if (menuonoff == 0)
+{document.getElementById("sidemenu").style.right = "0"; document.getElementById("openbutton").style.right = "250px"; menuonoff = 1;}
+else
+{document.getElementById("sidemenu").style.right = "-250px"; document.getElementById("openbutton").style.right = "0"; menuonoff = 0;}}
+
+function toggleFullScreen() {
+if (!document.fullscreenElement &&    // alternative standard method
+!document.mozFullScreenElement && !document.webkitFullscreenElement) {  // current working methods
+if (document.documentElement.requestFullscreen) {
+document.documentElement.requestFullscreen();
+} else if (document.documentElement.mozRequestFullScreen) {
+document.documentElement.mozRequestFullScreen();
+} else if (document.documentElement.webkitRequestFullscreen) {
+document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+}
+} else {
+if (document.cancelFullScreen) {
+document.cancelFullScreen();
+} else if (document.mozCancelFullScreen) {
+document.mozCancelFullScreen();
+} else if (document.webkitCancelFullScreen) {
+document.webkitCancelFullScreen();
+}}}
+
+function rolldice(dice)
+{var result;
+if (dice === 'custom') 
+{var currentcustomresult = parseInt(document.getElementById("customdice").innerHTML);
+result = Math.floor(Math.random() * currentcustomresult + 1);} else {result = Math.floor(Math.random() * dice + 1)};
+document.getElementById("result").innerHTML = result;
+fadeOut();}
+
+function fadeOut() 
+{var showresult = document.getElementById("result");
+showresult.style.display = 'block';
+var opacity = 1;
+var interval = setInterval(function() 
+{if (opacity > 0) {opacity -= 0.05; showresult.style.opacity = opacity;} else {clearInterval(interval); showresult.style.display = 'none'}}, 50);}
+
+function customdiceplus()
+{let counter = parseInt(document.getElementById("customdice").innerHTML);
+counter += 1;
+document.getElementById("customdice").innerHTML = counter;}
+
+function customdiceminus()
+{let counter = parseInt(document.getElementById("customdice").innerHTML);
+if (counter >= 1) {counter -= 1;};
+document.getElementById("customdice").innerHTML = counter;}
+
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,168 @@
+
+@font-face {
+font-family: "burvetica_nc";
+src: url("fonts/BurveticaNC.ttf");
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: var(--maintext); 
+  }
+
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+
+:root.white {--background: white;
+--maintext: black;
+--heading: black;
+--maintextlink: #FF3EB5;
+--maintextover: black;
+}
+
+
+:root.yellow {--background: #FFE900;
+--maintext: black;
+--heading: black;
+--maintextlink: white;
+--maintextover: black;
+}
+
+:root.pink {--background: #FF3EB5;
+--maintext: black;
+--heading: white;
+--maintextlink: white;
+--maintextover: black;
+}
+
+:root.black {--background: black;
+--maintext: white;
+--heading: #FF3EB5;
+--maintextlink: white;
+--maintextover: #FF3EB5;
+}
+
+:root.green {--background: #31ED31;
+--maintext: black;
+--heading: white;
+--maintextlink: white;
+--maintextover: black;
+}
+
+.hovertext
+{
+color: var(--maintextlink);
+}
+
+
+#sidemenu
+{
+height: 100vh;
+width: 250px;
+position: fixed;
+margin: 0;
+z-index: 1;
+bottom: 0;
+right: -250px;
+color: white;
+background-color: grey;
+transition: 0.5s;
+overflow-y: auto;
+}
+
+#menucontent
+{
+padding: 10px;
+}
+
+#openbutton
+{
+position:fixed;
+bottom: 0;
+right: 0px;
+z-index: 1;
+transition: 0.5s;
+}
+
+.colorpicker
+{height: 20px; width: 20px;}
+
+.colorpicker:hover
+{outline: 2px solid white;}
+
+#colourgrid
+{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+#diceroller
+{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.dicebutton
+{
+height: 50px;
+width: 50px;
+background-color: black;
+color: white;
+outline: 1px solid white;
+}
+
+
+#result
+{
+font-size: 100px; 
+position: absolute; 
+top: 50%;
+left: 50%;
+z-index: 3;
+transform: translate(-50%, -50%);
+}
+
+#maingrid
+{
+display: grid; 
+grid-template-columns: 1fr 1fr;
+}
+
+#left
+{height: 100vh;
+display:flex;
+flex-direction: column;
+background-color: var(--background);
+color: var(--maintext);}
+
+#right
+{
+height: 100vh;
+background-color:black;
+color:white;}
+
+#dialoguebox
+{
+font-family: burvetica_nc;
+flex:1;
+padding: 30px;
+margin: 30px;
+border-style: solid;
+border-width: 1.5px;
+overflow-y: auto;
+}
+
+#startbuttondiv
+{
+padding-bottom: 30px;
+text-align: center;
+}
+
+#startbutton
+{
+height: 50%;
+cursor: pointer;
+}
+
+body {margin: 0;}

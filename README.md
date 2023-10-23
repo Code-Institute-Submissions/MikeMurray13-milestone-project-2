@@ -4,13 +4,17 @@
 
 Create a short choose-your-own-adventure as a proof of concept for a larger project.
 
-The design and story will be heavily themed around the material and world created for the tabletop roleplaying game, Mork Borg. Mork Borg has a bold visual style that I love and would like to emulate. You can find out more about Mork Borg [here](https://morkborg.com/)
+The design and story will be heavily themed around the material and the world created for the tabletop roleplaying game, Mork Borg. Mork Borg has a bold visual style that I love and would like to emulate. You can find out more about Mork Borg [here](https://morkborg.com/)
 
 I have already created a pamphlet adventure for Mork Borg and released it via Kickstarter. I considered translating that specific adventure for this project but the content might be a little too graphic. You can download the free pdf [here](https://redgod.itch.io/the-oyster-ditch)  if you're curious - (only suitable for 18+)
 
 ## User Experience
 
 The ultimate experience is ahat of an interactive novel. Players can choose where to go and in what order to do things. There will be very basic puzzle/inventory/combat elements but really it's just another way for players to explore the world of Mork Borg.
+
+It should have basic navigation buttons and context sensitive choice buttons.
+
+![wireframe image](docs/Milestone%232%20-%20Wireframe%231.png "wireframe design")
 
 ## Scope
 
@@ -45,23 +49,23 @@ You can read about the choose-your-own-adventure format [here](https://en.wikipe
 
 ## Core Mechanics
 
-[x] Splash screen, licence information.
-[x] Moving from room to room.
-- [x] Create alert when user attempts to leave page.
-- [x] Using a 'static' object.
-- [x] Pick up an object and add it to your inventory.
-- [ ] Use an object in your inventory on another object.
-- [ ] Time-sensitive encounters.
-- [ ] Combat - See COMBAT.
-- [ ] Conversation with non-player character.
-- [ ] Congratulations message on completing the adventure.
-- [ ] Player stats, between splash screen and intro statement.
-- [ ] Incorporate stats into encounters.
-- [ ] Login.
-- [ ] Option to save game.
-- [ ] Scoreboard.
+* [x] Splash screen, licence information
+* [x] Moving from room to room
+* [x] Create alert when user attempts to leave page
+* [x] Using a 'static' object
+* [x] Pick up an object and add it to your inventory
+* [ ] Use an object in your inventory on another object
+* [ ] Time-sensitive encounters
+* [ ] Combat
+* [ ] Conversation with non-player character
+* [ ] Congratulations message on completing the adventure
+* [ ] Player stats, between splash screen and intro statement
+* [ ] Incorporate stats into encounters
+* [ ] Login
+* [ ] Option to save game
+* [ ] Scoreboard
 
-Ultimately I failed to achieve the whole list but the "game" contains the following features - 
+Ultimately I failed to achieve the whole list but the "game" contains the following features -
 
 * Start screen
   * Third party license information
@@ -80,6 +84,7 @@ Ultimately I failed to achieve the whole list but the "game" contains the follow
       * When new item is equipped, old item is pushed back into inventory
     * Gold can be collected and updates player object's gold value
 * Colour scheme can be changed in the settings menu
+* Leaving or refreshing the page triggers an alert to prevent you losing your progress
 
 ## Elements
 
@@ -91,74 +96,77 @@ I wanted a large image on the front page. I have released a project previously u
 
 The third-party licence information will either be on the splash screen itself or use a modal to display the information. This will need to be trial and error as I'm not experienced enough wth layout to make that decision beforehand.
 
+### Start Game
 
-Start Game
-Initial Idea 
-Change HTML of the "content" box to the standard HTML of the main game mode. On trying this I found that I was unable to manage this as it required completely reformatting the page in a way that was for more complicated than necessary. 
+#### Initial Idea
 
-The start page needed to display the license information and I wanted it to be obvious it was set in the MB universe. Currently the only available logo to do this is the "Compatible with..." logo. As the project isn't strictly "conmpoapitble" with MB, I reached out to the creator of the game who advised that this is the only logo available the moment but that they might look into new logos in the future to reflect products such as this. 
+Change HTML of the "content" box to the standard HTML of the main game mode. On trying this I found that I was unable to manage this as it required completely reformatting the page in a way that was for more complicated than necessary.
 
-To refelct the style of MB, I wanted to minimise the colours used on the front page, opting for black and white with a strong accent colour. I decided to only use the accent colour on the most important elements: the title and the start button. 
+The start page needed to display the license information and I wanted it to be obvious it was set in the MB universe. Currently the only available logo to do this is the "Compatible with..." logo. As the project isn't strictly "conmpoapitble" with MB, I reached out to the creator of the game who advised that this is the only logo available the moment but that they might look into new logos in the future to reflect products such as this.
 
-This is a scheme I've used on another project of my own previously and received some great feedback for. 
+To reflect the style of Mork Borg, I wanted to minimise the colours used on the front page, opting for black and white with a strong accent colour. I decided to only use the accent colour on the most important elements: the title and the start button.
 
-Include link to image in docs ***
+This is a scheme I've used on another project of my own previously and received some great feedback for.
 
 The image I used on the start screen is Saturn Eating His Son. It's available for free under the Creative Commons license and can be found [here](https://commons.wikimedia.org/wiki/File:Francisco_de_Goya,_Saturno_devorando_a_su_hijo_(1819-1823).jpg)
 
-BASIC NAVIGATION
-Started by generating the buttons when moving rooms. Too complex/double handing. 
+### Basic Navigation
 
-A couple of reasons. When it's formatted properly, generating the buttons on the fly would mean the directions would be in different positions each time the page changes. I think the UX is better this way because you always know where each button is going to be
+I started by generating the buttons on the fly when moving rooms. This required a lot of double handling as the code needed to be written for whichever direction the player was entering a room from. I decided to switch to an 2D array instead for couple of reasons: It allows the direction buttons to simply point to whichever index is in the appropriate direction. It also allows me to treat the rooms as objects and give them their own properties.
 
-Like say one page has east and west buttons, you go west, the next page might have north, south and east buttons. Now, the east button is in a different position to the last page.
+The buttons were originally all in one line. I thought it would be better for the user if they were locked in place as it meant the user always knows where the button is going to be.
 
-DISABLING BUTTONS
+For example, using the previous method, one room might have east and west buttons. You head west, the next room might have north, south and east buttons. Now, the east button is in a different position to the previous room.
+
+#### Disabling Buttons
+
 changed it to fixed buttons that disable if they lead to a room that doesn't exist.
-I used the following tutorials to help identify whether or not specific array indices exist and then added those as criteria for whether or not buttons are disabled.
-<https://stackoverflow.com/questions/55740746/how-to-find-index-of-empty-object-in-array-of-object#:~:text=You%20can%20use%20Object.,Object%20for%20check%20empty%20object.>
-<https://www.freecodecamp.org/news/check-if-an-object-is-empty-in-javascript/>
+I used [this](https://stackoverflow.com/questions/55740746/how-to-find-index-of-empty-object-in-array-of-object#:~:text=You%20can%20use%20Object.,Object%20for%20check%20empty%20object.) and [this](https://www.freecodecamp.org/news/check-if-an-object-is-empty-in-javascript/) tutorial and  to help identify whether or not specific array indices exist and then added those as criteria for whether or not buttons are disabled.
 
-Alert When Leaving Page
+#### Alert When Leaving Page
 
-This was simple to implement. I followed the information here - <https://www.w3schools.com/tags/ev_onbeforeunload.asp#:~:text=The%20onbeforeunload%20event%20fires%20when>,is%20different%20in%20different%20browsers.>
+This was a simple feature to implement. I followed the information [here](https://www.w3schools.com/tags/ev_onbeforeunload.asp#:~:text=The%20onbeforeunload%20event%20fires%20when>,is%20different%20in%20different%20browsers).
 
+### Error
 
-Error
-Once I implemented the Alert I came up against the following error in my last milestone project. I remembered that after hours of trying to find the answer and trawling through YouTube videos and forum posts that were vastly outside my skill level, I came across the following line of code that just fixed the issue in one step. 
-Python Socket.Error: [Errno 98] Address Already In Use
-kill -9 $(ps -A | grep python | awk '{print $1}')
+Once I implemented the Alert I came up against the following error in my last milestone project.
 
-Using Static Objects
-The main benefit of using the 2D array matrix instead of each button having its own code to change the HTML of the content box is that it allows rooms to be edited far easier. 
-In my basic example, clicking the button for the light switch in room 8, changed the description of room 5 when you return.
+> Python Socket.Error: [Errno 98] Address Already In Use
 
-Formatting
+I remembered that after hours of trying to find the answer and trawling through YouTube videos and forum posts that were vastly outside my skill level, I came across the following line of code that just fixed the issue in one step.
 
+> kill -9 $(ps -A | grep python | awk '{print $1}')
 
-Before moving on and working out what to do with the inventory I decided to do some basic formatting. 
+### Using Static Objects
+
+The main benefit of using the 2D array matrix instead of each button having its own code to change the HTML of the content box is that it allows rooms to be edited far easier. In my basic example, clicking the button for the light switch in room 8, changes the description of room 5 when you return.
+
+### Formatting
+
+Before moving on and working out what to do with the inventory I decided to do some basic formatting.
 
 Bootstrap issue
-After 3 hours of trying to format my code using bootstrap, I realised that the Code Institute Github template only links to Bootstrp 3.3.7. 
+After 3 hours of trying to format my code using bootstrap, I realised that the Code Institute Github template only links to Bootstrp 3.3.7. Once I changed the link to Bootstrap 5, a lot of my issues resolved themselves.
 
 Installed Bootstrap via the NPM using the following command -
 npm i bootstrap@5.3.2
 
+### Themes
 
-Themes
+I copied in the theme information from a learning project I created before starting the course. Mork Borg has a very strong visual style with several vibrant colour schemes. I thought it was important to see them represented. I've uploaded my test project [here](docs/MB/)
 
-I copied in the theme information from a learning project I created before starting the course. Mork Borg has a very strong visual style with several vibrant colour schemes. I thought it was important to see them represented. 
-***link or upload here
+### Buttons
 
-Buttons
-Half way through the project I changed the styling of the disabled buttons from red to 0.5 opacity. This allowed me to match the styling of the direction buttons to the choice buttons without a clashing colour (red) ruining the palette. The only other option was using colours within tach theme's palette to reflect that they were disabled but this meant that there was no clear distinction as to which were disabled and which were active. 
+Half way through the project I changed the styling of the disabled buttons from red to 0.5 opacity. This allowed me to match the styling of the direction buttons to the choice buttons without a clashing colour (red) ruining the palette. The only other option was using colours within tach theme's palette to reflect that they were disabled but this meant that there was no clear distinction as to which were disabled and which were active.
 
-I also changed the buttons toward the end as being able to see through them to the background colours didn't look right. 
+I also changed the buttons toward the end as being able to see through them to the background colours didn't look right.
 
-Equip items 
-Followed the following tutorial to populate the drop down box with an array.
+### Equip Items
 
-- <https://www.youtube.com/shorts/ZMZ4Mne1RdU>
+I followed [this](https://www.youtube.com/shorts/ZMZ4Mne1RdU) tutorial to populate the drop down box with the correct items from the inventory.
 
+I filtered the players inventory for each slot so they could only equip certain kinds of items in certain slots. For example, you can't equip a chainmail shirt to your hands.
 
-improve rooms by losing the 2D array. Instead each room object would have north south east and west keys. The dfirection buttons would then lead to the array reference of the value in each of those keys. This would cut down on the number of empty rooms/objects in the roomMatrix. This would require the "map" to be drawn or otherwise planned externally to the script. 
+## Ideas for Improvement
+
+Improve rooms by losing the 2D array. Instead each room object would have north, south, east, and west keys. The direction buttons would then lead to the array reference of the value in each of those keys. This would cut down on the number of empty rooms/objects in the roomMatrix. This would require the "map" to be drawn or otherwise planned externally to the script.
