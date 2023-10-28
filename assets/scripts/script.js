@@ -16,7 +16,7 @@ const roomMatrix = [
         {
             heading: "ABYSS",
             description: "The room's obscurity feels almost sentient, as if it hungers for the very essence of light, leaving an oppressive, unrelenting void in its wake. It engenders a sense of claustrophobia, a fear that the boundaries of reality have been breached, and one stands on the precipice of an abyss.<br>Sounds within the room are eerily muffled, voices and footsteps dampened by the unyielding gloom.Breathing in this abyss feels heavier, as if the air itself has been tainted by the shadows.Fear and uncertainty intertwine, for the room's profound darkness seems a harbinger of secrets and mysteries best left undisturbed.<br>In this unnaturally dark room, the boundaries between reality and the surreal blur, leaving those who dare to enter to ponder whether they have crossed into a realm where light and reason hold no dominion.< br > ",
-            choices: ["<button class=\"choice-button\" disabled onclick='addInventory(0,\"VERY Fancy Sword\",\"It is incredibly sharp and shiny!\",\"onehand\",10,\"yes\"); this.remove()'>You see nothing...</button>"]
+            choices: ["<button class=\"choice-button\" disabled onclick='addInventory(0,\"VERY Fancy Sword\",\"It is incredibly sharp and shiny!\",\"onehand\",\"weapon\",10); this.remove()'>You see nothing...</button>"]
         },
         /*1.1*/
         {
@@ -38,13 +38,14 @@ const roomMatrix = [
         {
             heading: "SHALLOW GRAVES",
             description: "In the heart of a fantastical realm, shrouded in an eerie stillness, you awaken amidst a pit of graves. The surroundings are a grotesque tableau of death and magic. Tombstones of various shapes and sizes jut from the earth like ancient sentinels, each one adorned with runes and symbols that glow faintly with an otherworldly light. The air is heavy with a spectral chill. A gaping hole in the ceiling allows the moon to shine in with an unnatural silver luminance, casting elongated shadows across the burial ground.In the center of this grim tableau, the pit's occupant stirs, bewildered and disoriented. <br>YOU MUST ESCAPE...",
-            choices: ["<button class=\"choice-button\" onclick='addInventory(0,\"Chipped Sword\",\"Slightly better than an old femur.\",\"onehand\",6,\"yes\"); this.remove()'>Chipped Sword</button>"]
+            choices: ["<button class=\"choice-button\" onclick='addInventory(0,\"Chipped Sword\",\"Slightly better than an old femur.\",\"onehand\",\"weapon\",6); this.remove()'>Chipped Sword</button>",
+                "<button class=\"choice-button\" onclick='addInventory(1,\"Greatsword\",\"A REALLY big sword...\",\"twohand\",\"weapon\",12); this.remove()'>Greatsword</button>"]
         },
         /*2.2*/
         {
             heading: "COWARD'S ARMOURY",
             description: "The absence of weaponry hangs heavy in the air, a poignant testament to the dungeon's decline and the passage of warriors who have long since departed. The room, once a symbol of strength and readiness, now stands as a haunting reminder of the silence that has come to define this desolate, forsaken place.",
-            choices: ["<button class=\"choice-button\" onclick='addInventory(0,\"Cracked Shield\",\"You can see right through it.\",\"shield\",1,\"yes\"); this.remove()'>Cracked Shield</button>"]
+            choices: ["<button class=\"choice-button\" onclick='addInventory(0,\"Cracked Shield\",\"You can see right through it.\",\"onehand\",\"shield\",1); this.remove()'>Cracked Shield</button>"]
         }
     ],
     [
@@ -60,7 +61,7 @@ const roomMatrix = [
         {
             heading: "CHAMBER OF THE SACRED...SWITCH?",
             description: "The room itself is a hallowed chamber, its walls adorned with intricate runes and ancient symbols that pulse with latent magic. The air crackles with an enigmatic energy, as if the very walls contain secrets long forgotten by the world above. As one approaches the device, a sense of trepidation courses through them, for this device, though simple in appearance, holds the potential to awaken long- dormant forces.With a surge of anticipation, they reach out to engage the arcane switch, aware that the room's mysteries and the power it holds are poised to unveil themselves, revealing a world of hidden knowledge and untold possibilities.",
-            choices: ["<button class=\"choice-button\" onclick='lightSwitch(); this.remove();'>LIGHT SWITCH</button>", "<button class=\"choice-button\" onclick='addInventory(1,\"Rusty Chainmail\",\"Watch out for tetanus!\",\"torso\",2,\"no\"); this.remove()'>Rusty Chainmail</button>"]
+            choices: ["<button class=\"choice-button\" onclick='lightSwitch(); this.remove();'>LIGHT SWITCH</button>", "<button class=\"choice-button\" onclick='addInventory(1,\"Rusty Chainmail\",\"Watch out for tetanus!\",\"armor\",\"medium\",4); this.remove()'>Rusty Chainmail</button>"]
         }
     ]
 ];
@@ -121,8 +122,8 @@ function updateContent() {
     }
 
     //Creates array for drop down menu
-    let equipHand = player.inventory.filter(item => item.combat === "yes" && (item.type === "onehand" || item.type === "shield"));
-    let equipTorso = player.inventory.filter(item => item.type === "torso");
+    let equipHand = player.inventory.filter(item => (item.type === "onehand" || item.type === "twohand"));
+    let equipTorso = player.inventory.filter(item => item.type === "armor");
 
     //Empties inventory before populating it
     player.handL != "" ? document.getElementById("leftHand").innerHTML = "<option value=" + player.handL.itemName + ">" + player.handL.itemName + "</option>" : document.getElementById("leftHand").innerHTML = "<option></option>";
@@ -200,21 +201,21 @@ function leavePageAlert() {
 //Turns the light on in Room 5
 function lightSwitch() {
     roomMatrix[1][0].description = 'The dispelling of darkness was not merely a matter of illumination, but a revelation of hidden realms and forgotten truths. Objects once concealed emerged from the void, and long-forgotten sigils and inscriptions come to light.';
-    roomMatrix[1][0].choices[0] = "<button class=\"choice-button\" onclick='addInventory(0,\"VERY Fancy Sword\",\"It is incredibly sharp and shiny!\",\"onehand\",10,\"yes\"); this.remove()'>Shiny Sword</button>";
+    roomMatrix[1][0].choices[0] = "<button class=\"choice-button\" onclick='addInventory(0,\"VERY Fancy Sword\",\"It is incredibly sharp and shiny!\",\"onehand\",\"weapon\",10); this.remove()'>Shiny Sword</button>";
     roomMatrix[gameState.currX][gameState.currY].description += '<br>The light switch sparks! Nothing changes. Not in this room at least...';
     roomMatrix[gameState.currX][gameState.currY].choices[0] = "<button disabled class=\"choice-button\">Charred Switch</button>";
     updateContent();
 }
 
 
-function addInventory(choiceNumber, itemName, description, type, value, combat) {
+function addInventory(choiceNumber, itemName, description, type, subtype, value) {
     //Adds 'item' to inventory
     player.inventory.push({
         itemName,
         description,
         type,
-        value,
-        combat
+        subtype,
+        value
     });
     //Prevents button from being created in roomMatrix once collected
     roomMatrix[gameState.currX][gameState.currY].choices[choiceNumber] = "";
@@ -251,24 +252,27 @@ function updateInventory(item, slot) {
     const equippedItem = player.inventory.find((element) => element.itemName === item);
     index = player.inventory.indexOf(equippedItem);
 
-    //Splices equipped item from inventory
-    //Pushes the players currently equipped item back into their inventory
-    //Updates currently equipped item in appropriate slot
+    //1. Splices equipped item from inventory
+    //2. Pushes the players currently equipped item back into their inventory
+    //3. Updates currently equipped item in appropriate slot
     switch (slot) {
         case "handL":
-            player.inventory.splice(index, 1);
-            player.handL != "" ? player.inventory.push(player.handL) : "";
-            player.handL = equippedItem;
+            /*1*/ player.inventory.splice(index, 1);
+            /*2*/ player.handL != "" ? player.inventory.push(player.handL) : "";
+            if (equippedItem.type === "twohand") { player.handR != "" ? player.inventory.push(player.handR) : ""; player.handR = equippedItem; };
+            /*3*/ player.handL = equippedItem;
+
             break;
         case "handR":
-            player.inventory.splice(index, 1);
-            player.handR != "" ? player.inventory.push(player.handR) : "";
-            player.handR = equippedItem;
+            /*1*/ player.inventory.splice(index, 1);
+            /*2*/ player.handR != "" ? player.inventory.push(player.handR) : "";
+            if (equippedItem.type === "twohand") { player.handL != "" ? player.inventory.push(player.handL) : ""; player.handL = equippedItem; };
+            /*3*/ player.handR = equippedItem;
             break;
         case "torso":
-            player.inventory.splice(index, 1);
-            player.torso != "" ? player.inventory.push(player.torso) : "";
-            player.torso = equippedItem;
+            /*1*/ player.inventory.splice(index, 1);
+            /*2*/ player.torso != "" ? player.inventory.push(player.torso) : "";
+            /*3*/ player.torso = equippedItem;
             break;
     }
     updateContent();
