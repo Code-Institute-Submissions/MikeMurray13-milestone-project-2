@@ -1,6 +1,6 @@
 # Milestone Project #2 - Choose Your Own Adventure Game
 
-[DEPLOYED PAGE](https://mikemurray13.github.io/milestone-project-2/index.html)
+[DEPLOYED PAGE](https://mikemurray13.github.io/milestone-project-2/main.html)
 
 ## Proposal
 
@@ -191,4 +191,4 @@ Deployed using GitHub Pages.
 
 I decided the use the official tutorial rather than refer back to the example on the course as the workflow of finding information this way is closer to how the information would be found when working in a typical role. There could also potentially be some new material/information.
 
-The deployed page can be found [here](https://mikemurray13.github.io/milestone-project-2/index.html).
+The deployed page can be found [here](https://mikemurray13.github.io/milestone-project-2/main.html).
